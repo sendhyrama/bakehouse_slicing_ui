@@ -2,13 +2,17 @@
 import 'package:bakehouse_slicing_ui/common/colors.dart';
 import 'package:bakehouse_slicing_ui/common/text_styles.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class SearchBarr extends StatelessWidget {
   final TextEditingController controller;
   final Function(String) onSearch;
 
-  SearchBarr({required this.controller, required this.onSearch});
+  SearchBarr({required this.controller, required this.onSearch}) {
+    // Add listener to the controller to handle live search
+    controller.addListener(() {
+      onSearch(controller.text);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,11 +29,15 @@ class SearchBarr extends StatelessWidget {
               child: TextField(
                 controller: controller,
                 decoration: const InputDecoration(
-                    hintText: 'Cari pesanan',
-                    border: InputBorder.none,
-                    contentPadding: EdgeInsets.symmetric(horizontal: 16.0),
-                    hintStyle: TextStyles.b1),
-                onSubmitted: onSearch,
+                  hintText: 'Cari pesanan',
+                  border: InputBorder.none,
+                  contentPadding: EdgeInsets.symmetric(horizontal: 16.0),
+                  hintStyle: TextStyles.b1,
+                ),
+                onChanged: (text) {
+                  // Call onSearch directly when text changes
+                  onSearch(text);
+                },
               ),
             ),
             IconButton(

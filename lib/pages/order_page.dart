@@ -58,15 +58,7 @@ class _OrdersPageState extends State<OrderPage> {
 
   void handleSearch(String query) {
     setState(() {
-      filteredOrders = orders.where((order) {
-        return (order.customerName
-                    .toLowerCase()
-                    .contains(query.toLowerCase()) ||
-                order.orderNumber
-                    .toLowerCase()
-                    .contains(query.toLowerCase())) &&
-            order.status == getStatusByTabIndex(selectedTabIndex);
-      }).toList();
+      filterOrders();
     });
   }
 
@@ -74,38 +66,58 @@ class _OrdersPageState extends State<OrderPage> {
     if (isStatusSelected) {
       switch (selectedTabIndex) {
         case 0:
-          filteredOrders =
-              orders.where((order) => order.status == 'Pesanan Baru').toList();
+          filteredOrders = orders
+              .where((order) =>
+                  order.status == 'Pesanan Baru' && orderMatchesSearch(order))
+              .toList();
           break;
         case 1:
-          filteredOrders =
-              orders.where((order) => order.status == 'Diproduksi').toList();
+          filteredOrders = orders
+              .where((order) =>
+                  order.status == 'Diproduksi' && orderMatchesSearch(order))
+              .toList();
           break;
         case 2:
-          filteredOrders =
-              orders.where((order) => order.status == 'Dikemas').toList();
+          filteredOrders = orders
+              .where((order) =>
+                  order.status == 'Dikemas' && orderMatchesSearch(order))
+              .toList();
           break;
         case 3:
-          filteredOrders =
-              orders.where((order) => order.status == 'Siap diambil').toList();
+          filteredOrders = orders
+              .where((order) =>
+                  order.status == 'Siap diambil' && orderMatchesSearch(order))
+              .toList();
           break;
       }
     } else {
       switch (selectedTabIndex) {
         case 0:
-          filteredOrders =
-              orders.where((order) => order.status == 'Selesai').toList();
+          filteredOrders = orders
+              .where((order) =>
+                  order.status == 'Selesai' && orderMatchesSearch(order))
+              .toList();
           break;
         case 1:
-          filteredOrders =
-              orders.where((order) => order.status == 'Dibatalkan').toList();
+          filteredOrders = orders
+              .where((order) =>
+                  order.status == 'Dibatalkan' && orderMatchesSearch(order))
+              .toList();
           break;
         case 2:
-          filteredOrders =
-              orders.where((order) => order.status == 'Ditolak').toList();
+          filteredOrders = orders
+              .where((order) =>
+                  order.status == 'Ditolak' && orderMatchesSearch(order))
+              .toList();
           break;
       }
     }
+  }
+
+  bool orderMatchesSearch(Order order) {
+    String query = searchController.text.toLowerCase();
+    return order.customerName.toLowerCase().contains(query) ||
+        order.orderNumber.toLowerCase().contains(query);
   }
 
   String getStatusByTabIndex(int index) {
