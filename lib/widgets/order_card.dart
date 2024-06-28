@@ -44,7 +44,7 @@ class OrderCard extends StatelessWidget {
       child: Card(
         margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16.0),
+          borderRadius: BorderRadius.circular(12.0),
           side: const BorderSide(color: PrimaryColor.c8),
         ),
         child: Padding(
@@ -56,7 +56,7 @@ class OrderCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   ClipRRect(
-                    borderRadius: BorderRadius.circular(8.0),
+                    borderRadius: BorderRadius.circular(12.0),
                     child: Image.network(
                       order.imageUrl,
                       width: 120,

@@ -79,7 +79,7 @@ class OrderDetailPage extends StatelessWidget {
               itemBuilder: (context, index) {
                 return Card(
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8.0),
+                    borderRadius: BorderRadius.circular(12.0),
                     side: const BorderSide(color: PrimaryColor.c8, width: 1),
                   ),
                   margin: const EdgeInsets.symmetric(vertical: 8.0),
@@ -88,7 +88,7 @@ class OrderDetailPage extends StatelessWidget {
                     child: Row(
                       children: [
                         ClipRRect(
-                          borderRadius: BorderRadius.circular(8.0),
+                          borderRadius: BorderRadius.circular(12.0),
                           child: Image.network(
                             items[index].imageUrl,
                             width: 100,
