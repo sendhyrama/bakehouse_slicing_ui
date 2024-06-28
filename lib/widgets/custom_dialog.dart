@@ -1,26 +1,20 @@
-// lib/widgets/update_status_dialog.dart
+// lib/widgets/custom_dialog.dart
+import 'package:flutter/material.dart';
 import 'package:bakehouse_slicing_ui/common/colors.dart';
 import 'package:bakehouse_slicing_ui/common/text_styles.dart';
-import 'package:flutter/material.dart';
 
-class UpdateStatusDialog extends StatelessWidget {
+class CustomDialog extends StatelessWidget {
+  final String title;
+  final String content;
   final VoidCallback onConfirm;
-  final String currentStatus;
+  final String confirmText;
 
-  UpdateStatusDialog({required this.onConfirm, required this.currentStatus});
-
-  String getNextStatusText(String status) {
-    switch (status) {
-      case 'Pesanan Baru':
-        return 'Siap Produksi';
-      case 'Diproduksi':
-        return 'Siap Dikemas';
-      case 'Dikemas':
-        return 'Siap Diambil';
-      default:
-        return 'Siap Produksi';
-    }
-  }
+  CustomDialog({
+    required this.title,
+    required this.content,
+    required this.onConfirm,
+    required this.confirmText,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -29,22 +23,22 @@ class UpdateStatusDialog extends StatelessWidget {
         borderRadius: BorderRadius.circular(16.0),
       ),
       child: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              'Perbarui status',
-              style: TextStyles.h3.copyWith(color: PrimaryColor.c5)
+              title,
+              style: TextStyles.h3.copyWith(color: PrimaryColor.c5),
             ),
             const SizedBox(height: 8.0),
-            const Text(
-              'Apakah Anda Yakin?',
-              style: TextStyle(color: Colors.black),
+            Text(
+              content,
+              style: TextStyles.b1.copyWith(color: Colors.black), textAlign: TextAlign.center,
             ),
             const SizedBox(height: 16.0),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 OutlinedButton(
                   onPressed: () {
@@ -52,17 +46,20 @@ class UpdateStatusDialog extends StatelessWidget {
                   },
                   child: Text('Kembali', style: TextStyles.b1.copyWith(color: Colors.grey[800])),
                   style: OutlinedButton.styleFrom(
-                    foregroundColor: Colors.grey[800], side: const BorderSide(color: Colors.grey),
+                    foregroundColor: Colors.grey[800],
+                    side: const BorderSide(color: Colors.grey),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
                   ),
                 ),
+                const SizedBox(width: 16.0),
                 ElevatedButton(
                   onPressed: onConfirm,
-                  child: Text(getNextStatusText(currentStatus)),
+                  child: Text(confirmText),
                   style: ElevatedButton.styleFrom(
-                    foregroundColor: Colors.white, backgroundColor: Colors.green,
+                    foregroundColor: Colors.white,
+                    backgroundColor: Colors.green,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),

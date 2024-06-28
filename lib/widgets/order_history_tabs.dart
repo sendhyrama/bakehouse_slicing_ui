@@ -1,5 +1,8 @@
 // lib/widgets/order_history_tabs.dart
+import 'package:bakehouse_slicing_ui/common/colors.dart';
 import 'package:flutter/material.dart';
+
+import '../common/text_styles.dart';
 
 class OrderHistoryTabs extends StatelessWidget {
   final int selectedIndex;
@@ -31,19 +34,20 @@ class OrderHistoryTabs extends StatelessWidget {
       onTap: () => onTabSelected(index),
       child: Column(
         children: [
+          const SizedBox(height: 8.0),
           Text(
             text,
-            style: TextStyle(
-              color: isSelected ? Colors.blue : Colors.grey,
-              fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+            style: TextStyles.b1.copyWith(
+              color: isSelected ? PrimaryColor.c8 : Colors.grey,
+              fontWeight: isSelected ? FontWeight.w500 : FontWeight.normal,
             ),
           ),
           if (isSelected)
             Container(
               margin: const EdgeInsets.only(top: 8.0),
               height: 2.0,
-              width: 60.0,
-              color: Colors.blue,
+              width: 100.0,
+              color: PrimaryColor.c8,
             ),
         ],
       ),

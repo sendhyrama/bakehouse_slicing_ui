@@ -1,4 +1,4 @@
-// lib/widgets/order_page_top_section.dart
+// lib/widgets/order_page_header.dart
 import 'package:bakehouse_slicing_ui/common/colors.dart';
 import 'package:bakehouse_slicing_ui/common/text_styles.dart';
 import 'package:flutter/material.dart';
@@ -59,10 +59,7 @@ class OrderPageHeader extends StatelessWidget {
               ),
               const SizedBox(width: 12.0),
               ElevatedButton(
-                onPressed: () {
-                  onHistoryPressed();
-                  Navigator.of(context).pushNamed('/order-history');
-                },
+                onPressed: () => onHistoryPressed(),
                 style: ElevatedButton.styleFrom(
                   foregroundColor:
                       isStatusSelected ? PrimaryColor.c8 : Colors.white,
@@ -74,7 +71,8 @@ class OrderPageHeader extends StatelessWidget {
                 ),
                 child: const Text('Riwayat Pesanan', style: TextStyles.b1),
               ),
-              // IcddonButton(
+              // Uncomment the following lines if you need the filter button
+              // IconButton(
               //   icon: const Icon(Icons.filter_list, color: Colors.white),
               //   onPressed: () => onFilterPressed(),
               // ),
