@@ -1,5 +1,5 @@
+import 'package:bakehouse_slicing_ui/pages/splash_screen.dart';
 import 'package:flutter/material.dart';
-import 'pages/main_screen.dart';
 import 'pages/order_history_page.dart';
 
 void main() {
@@ -11,12 +11,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Order Status',
+      title: 'Bakehouse',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        useMaterial3: true,
       ),
-      home: const MainScreen(),
+      initialRoute: '/',
       routes: {
+        '/': (context) => const SplashScreen(),
         '/order-history': (context) => OrderHistoryPage(),
       },
     );
