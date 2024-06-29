@@ -271,6 +271,7 @@ class _OrdersPageState extends State<OrderPage> {
           SearchBarr(
             controller: searchController,
             onSearch: handleSearch,
+            onFilterPressed: handleFilterPressed,
           ),
           Expanded(
             child: ListView.builder(

@@ -41,6 +41,10 @@ class _OrderHistoryPageState extends State<OrderHistoryPage> {
     });
   }
 
+  void handleFilterPressed() {
+    // Filter functionality here
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,6 +62,7 @@ class _OrderHistoryPageState extends State<OrderHistoryPage> {
           SearchBarr(
             controller: searchController,
             onSearch: handleSearch,
+            onFilterPressed: handleFilterPressed,
           ),
           Expanded(
             child: ListView.builder(

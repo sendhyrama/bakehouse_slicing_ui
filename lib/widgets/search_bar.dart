@@ -6,8 +6,9 @@ import 'package:flutter/material.dart';
 class SearchBarr extends StatelessWidget {
   final TextEditingController controller;
   final Function(String) onSearch;
+  final VoidCallback onFilterPressed;
 
-  SearchBarr({required this.controller, required this.onSearch}) {
+  SearchBarr({required this.controller, required this.onSearch, required this.onFilterPressed}) {
     // Add listener to the controller to handle live search
     controller.addListener(() {
       onSearch(controller.text);
@@ -18,37 +19,57 @@ class SearchBarr extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(16.0),
-      child: Container(
-        decoration: BoxDecoration(
-          border: Border.all(color: PrimaryColor.c5),
-          borderRadius: BorderRadius.circular(12),
-        ),
-        child: Row(
-          children: [
-            Expanded(
-              child: TextField(
-                controller: controller,
-                decoration: const InputDecoration(
-                  hintText: 'Cari pesanan',
-                  border: InputBorder.none,
-                  contentPadding: EdgeInsets.symmetric(horizontal: 16.0),
-                  hintStyle: TextStyles.b1,
-                ),
-                onChanged: (text) {
-                  // Call onSearch directly when text changes
-                  onSearch(text);
-                },
+      child: Row(
+        children: [
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                border: Border.all(color: PrimaryColor.c5),
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: TextField(
+                      controller: controller,
+                      decoration: const InputDecoration(
+                        hintText: 'Cari pesanan',
+                        border: InputBorder.none,
+                        contentPadding: EdgeInsets.symmetric(horizontal: 16.0),
+                        hintStyle: TextStyles.b1,
+                      ),
+                      onChanged: (text) {
+                        // Call onSearch directly when text changes
+                        onSearch(text);
+                      },
+                    ),
+                  ),
+                  IconButton(
+                    icon: const Icon(
+                      Icons.search,
+                      color: PrimaryColor.c8,
+                    ),
+                    onPressed: () => onSearch(controller.text),
+                  ),
+                ],
               ),
             ),
-            IconButton(
+          ),
+          const SizedBox(width: 16.0),
+          Container(
+            decoration: BoxDecoration(
+              border: Border.all(color: PrimaryColor.c8),
+              borderRadius: BorderRadius.circular(50),
+            ),
+            child: IconButton(
               icon: const Icon(
-                Icons.search,
+                Icons.filter_list,
                 color: PrimaryColor.c8,
               ),
-              onPressed: () => onSearch(controller.text),
+              onPressed: onFilterPressed,
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
