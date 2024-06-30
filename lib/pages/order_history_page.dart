@@ -1,6 +1,7 @@
 // lib/pages/order_history_page.dart
 import 'package:flutter/material.dart';
 import '../models/order.dart';
+import '../widgets/filter_bottom_sheet.dart';
 import '../widgets/order_history_card.dart';
 import '../widgets/order_history_tabs.dart';
 import '../widgets/search_bar.dart';
@@ -15,43 +16,80 @@ class _OrderHistoryPageState extends State<OrderHistoryPage> {
   TextEditingController searchController = TextEditingController();
   List<Order> orders = [];
   List<Order> filteredOrders = [];
+  Map<int, DateTime?> startDates = {};
+  Map<int, DateTime?> endDates = {};
 
   @override
   void initState() {
     super.initState();
     orders = Order.getMockOrders(); // Assume getMockOrders is a static method that returns mock data
-    filteredOrders = orders;
+    filterOrders();
   }
 
   void handleTabSelected(int index) {
     setState(() {
       selectedTabIndex = index;
-      // Filter orders based on the selected tab
-      // For simplicity, assume all orders are 'Selesai'
-      filteredOrders = orders.where((order) => true).toList();
+      filterOrders();
     });
   }
 
   void handleSearch(String query) {
     setState(() {
-      filteredOrders = orders.where((order) {
-        return order.customerName.toLowerCase().contains(query.toLowerCase()) ||
-            order.orderNumber.toLowerCase().contains(query.toLowerCase());
-      }).toList();
+      filterOrders();
     });
   }
 
   void handleFilterPressed() {
-    // Filter functionality here
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (context) {
+        return FilterBottomSheet(
+          onApplyFilter: applyFilter,
+          initialStartDate: startDates[selectedTabIndex],
+          initialEndDate: endDates[selectedTabIndex],
+        );
+      },
+    );
+  }
+
+  void applyFilter(DateTime start, DateTime end) {
+    setState(() {
+      startDates[selectedTabIndex] = start;
+      endDates[selectedTabIndex] = end;
+      filterOrders();
+    });
+  }
+
+  void filterOrders() {
+    if (selectedTabIndex == 0) {
+      filteredOrders = orders
+          .where((order) => order.status == 'Selesai' && orderMatchesSearch(order))
+          .toList();
+    } else if (selectedTabIndex == 1) {
+      filteredOrders = orders
+          .where((order) => order.status == 'Dibatalkan' && orderMatchesSearch(order))
+          .toList();
+    } else {
+      filteredOrders = orders
+          .where((order) => order.status == 'Ditolak' && orderMatchesSearch(order))
+          .toList();
+    }
+  }
+
+  bool orderMatchesSearch(Order order) {
+    String query = searchController.text.toLowerCase();
+    return order.customerName.toLowerCase().contains(query) ||
+        order.orderNumber.toLowerCase().contains(query);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Pesanan'),
-        centerTitle: true,
-        backgroundColor: Colors.blue,
       ),
       body: Column(
         children: [

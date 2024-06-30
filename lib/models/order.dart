@@ -13,6 +13,9 @@ class Order {
   String status;
   final List<OrderItem> items;
   String note; // Note field
+  final double? rating;
+  final String reviewText;
+  final List<String>? reviewImages;
 
   Order({
     required this.orderNumber,
@@ -24,6 +27,9 @@ class Order {
     this.status = 'Pesanan Baru',
     required this.items,
     required this.note, // Initialize the note field
+    this.rating,
+    required this.reviewText,
+    this.reviewImages,
   });
 
   static List<Order> getMockOrders() {
@@ -72,6 +78,14 @@ class Order {
           ),
         ],
         note: 'Request dikasih tulisan Happy Birthday',
+        rating: 5,
+        reviewText:
+            'Kue coklat nya enak, pas banget rasanya ga bikin eneg temen-temen juga suka 🥰',
+        reviewImages: [
+          'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+          'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+          'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+        ],
       ),
       Order(
         orderNumber: 'NP24030AKM',
@@ -117,6 +131,14 @@ class Order {
           ),
         ],
         note: 'Request dikasih tulisan Happy Birthday',
+        rating: 5,
+        reviewText:
+            'Kue coklat nya enak, pas banget rasanya ga bikin eneg temen-temen juga suka 🥰',
+        reviewImages: [
+          'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+          'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+          'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+        ],
       ),
       Order(
         orderNumber: 'NP24030AKM',
@@ -162,6 +184,14 @@ class Order {
           ),
         ],
         note: 'Request dikasih tulisan Happy Birthday',
+        rating: 5,
+        reviewText:
+            'Kue coklat nya enak, pas banget rasanya ga bikin eneg temen-temen juga suka 🥰',
+        reviewImages: [
+          'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+          'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+          'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+        ],
       ),
       Order(
         orderNumber: 'NP24030AKM',
@@ -207,6 +237,14 @@ class Order {
           ),
         ],
         note: 'Request dikasih tulisan Happy Birthday',
+        rating: 5,
+        reviewText:
+            'Kue coklat nya enak, pas banget rasanya ga bikin eneg temen-temen juga suka 🥰',
+        reviewImages: [
+          'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+          'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+          'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+        ],
       ),
       Order(
         orderNumber: 'NP24030AKM',
@@ -252,6 +290,14 @@ class Order {
           ),
         ],
         note: 'Request dikasih tulisan Happy Birthday',
+        rating: 5,
+        reviewText:
+            'Kue coklat nya enak, pas banget rasanya ga bikin eneg temen-temen juga suka 🥰',
+        reviewImages: [
+          'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+          'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+          'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+        ],
       ),
       Order(
         orderNumber: 'NP24030AKM',
@@ -297,6 +343,14 @@ class Order {
           ),
         ],
         note: 'Request dikasih tulisan Happy Birthday',
+        rating: 5,
+        reviewText:
+            'Kue coklat nya enak, pas banget rasanya ga bikin eneg temen-temen juga suka 🥰',
+        reviewImages: [
+          'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+          'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+          'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+        ],
       ),
       Order(
         orderNumber: 'NP24030AKM',
@@ -342,6 +396,14 @@ class Order {
           ),
         ],
         note: 'Request dikasih tulisan Happy Birthday',
+        rating: 5,
+        reviewText:
+            'Kue coklat nya enak, pas banget rasanya ga bikin eneg temen-temen juga suka 🥰',
+        reviewImages: [
+          'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+          'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+          'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+        ],
       ),
       Order(
         orderNumber: 'NP24030AKM',
@@ -387,6 +449,14 @@ class Order {
           ),
         ],
         note: 'Request dikasih tulisan Happy Birthday',
+        rating: 5,
+        reviewText:
+            'Kue coklat nya enak, pas banget rasanya ga bikin eneg temen-temen juga suka 🥰',
+        reviewImages: [
+          'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+          'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+          'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+        ],
       ),
       Order(
         orderNumber: 'NP24030AKM',
@@ -432,6 +502,14 @@ class Order {
           ),
         ],
         note: 'Request dikasih tulisan Happy Birthday',
+        rating: 5,
+        reviewText:
+            'Kue coklat nya enak, pas banget rasanya ga bikin eneg temen-temen juga suka 🥰',
+        reviewImages: [
+          'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+          'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+          'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+        ],
       ),
       Order(
         orderNumber: 'NP24030AKM',
@@ -477,6 +555,14 @@ class Order {
           ),
         ],
         note: 'Request dikasih tulisan Happy Birthday',
+        rating: 5,
+        reviewText:
+            'Kue coklat nya enak, pas banget rasanya ga bikin eneg temen-temen juga suka 🥰',
+        reviewImages: [
+          'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+          'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+          'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+        ],
       ),
       // Other mock orders...
     ];

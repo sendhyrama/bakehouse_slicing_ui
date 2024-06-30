@@ -4,6 +4,7 @@ import 'package:bakehouse_slicing_ui/widgets/order_page_header.dart';
 import 'package:flutter/material.dart';
 import '../models/order.dart';
 import '../widgets/order_card.dart';
+import '../widgets/order_history_card.dart';
 import '../widgets/order_status_tabs.dart';
 import '../widgets/order_history_tabs.dart';
 import '../widgets/search_bar.dart';
@@ -202,6 +203,7 @@ class _OrdersPageState extends State<OrderPage> {
             Navigator.of(context).pop();
           },
           confirmText: 'Tolak',
+          isReject: true,
         );
       },
     );
@@ -284,25 +286,28 @@ class _OrdersPageState extends State<OrderPage> {
                     message: 'Tidak ada pesanan yang ditemukan',
                     icon: Icons.inbox)
                 : ListView.builder(
-                    padding: EdgeInsets.zero,
-                    itemCount: filteredOrders.length,
-                    itemBuilder: (context, index) {
-                      return OrderCard(
-                        order: filteredOrders[index],
-                        onUpdateStatus: () {
-                          if (filteredOrders[index].status == 'Siap diambil') {
-                            handleCompleteOrder(filteredOrders[index]);
-                          } else {
-                            handleShowUpdateDialog(filteredOrders[index]);
-                          }
-                        },
-                        onAccept: () =>
-                            handleAcceptOrder(filteredOrders[index]),
-                        onReject: () =>
-                            handleRejectOrder(filteredOrders[index]),
-                      );
-                    },
-                  ),
+                padding: EdgeInsets.zero,
+                itemCount: filteredOrders.length,
+                itemBuilder: (context, index) {
+                  if (filteredOrders[index].status == 'Selesai' || filteredOrders[index].status == 'Ditolak') {
+                    return OrderHistoryCard(order: filteredOrders[index]);
+                  } else {
+                    return OrderCard(
+                      order: filteredOrders[index],
+                      // items:context,index, // Pass the appropriate order items
+                      onUpdateStatus: () {
+                        if (filteredOrders[index].status == 'Siap diambil') {
+                          handleCompleteOrder(filteredOrders[index]);
+                        } else {
+                          handleShowUpdateDialog(filteredOrders[index]);
+                        }
+                      },
+                      onAccept: () => handleAcceptOrder(filteredOrders[index]),
+                      onReject: () => handleRejectOrder(filteredOrders[index]),
+                    );
+                  }
+                },
+              ),
           ),
         ],
       ),

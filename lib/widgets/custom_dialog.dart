@@ -8,12 +8,14 @@ class CustomDialog extends StatelessWidget {
   final String content;
   final VoidCallback onConfirm;
   final String confirmText;
+  final bool isReject; // New parameter
 
   CustomDialog({
     required this.title,
     required this.content,
     required this.onConfirm,
     required this.confirmText,
+    this.isReject = false, // Default value is false
   });
 
   @override
@@ -34,7 +36,8 @@ class CustomDialog extends StatelessWidget {
             const SizedBox(height: 8.0),
             Text(
               content,
-              style: TextStyles.b1.copyWith(color: Colors.black), textAlign: TextAlign.center,
+              style: TextStyles.b1.copyWith(color: Colors.black),
+              textAlign: TextAlign.center,
             ),
             const SizedBox(height: 16.0),
             Row(
@@ -44,7 +47,8 @@ class CustomDialog extends StatelessWidget {
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
-                  child: Text('Kembali', style: TextStyles.b1.copyWith(color: Colors.grey[800])),
+                  child: Text('Kembali',
+                      style: TextStyles.b1.copyWith(color: Colors.grey[800])),
                   style: OutlinedButton.styleFrom(
                     foregroundColor: Colors.grey[800],
                     side: const BorderSide(color: Colors.grey),
@@ -59,7 +63,7 @@ class CustomDialog extends StatelessWidget {
                   child: Text(confirmText),
                   style: ElevatedButton.styleFrom(
                     foregroundColor: Colors.white,
-                    backgroundColor: Colors.green,
+                    backgroundColor: isReject ? Colors.red : Colors.green, // Change background color
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
