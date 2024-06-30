@@ -1,4 +1,5 @@
 // lib/pages/order_page.dart
+import 'package:bakehouse_slicing_ui/widgets/empty_state.dart';
 import 'package:bakehouse_slicing_ui/widgets/order_page_header.dart';
 import 'package:flutter/material.dart';
 import '../models/order.dart';
@@ -7,6 +8,8 @@ import '../widgets/order_status_tabs.dart';
 import '../widgets/order_history_tabs.dart';
 import '../widgets/search_bar.dart';
 import '../widgets/custom_dialog.dart';
+import '../widgets/filter_bottom_sheet.dart';
+import '../widgets/filter_indicator.dart';
 
 class OrderPage extends StatefulWidget {
   const OrderPage({super.key});
@@ -21,6 +24,10 @@ class _OrdersPageState extends State<OrderPage> {
   TextEditingController searchController = TextEditingController();
   List<Order> orders = [];
   List<Order> filteredOrders = [];
+  DateTime? startDate;
+  DateTime? endDate;
+  Map<int, DateTime?> startDates = {};
+  Map<int, DateTime?> endDates = {};
 
   @override
   void initState() {
@@ -46,7 +53,36 @@ class _OrdersPageState extends State<OrderPage> {
   }
 
   void handleFilterPressed() {
-    // Filter functionality here
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (context) {
+        return FilterBottomSheet(
+          onApplyFilter: applyFilter,
+          initialStartDate: startDates[selectedTabIndex],
+          initialEndDate: endDates[selectedTabIndex],
+        );
+      },
+    );
+  }
+
+  void applyFilter(DateTime start, DateTime end) {
+    setState(() {
+      startDates[selectedTabIndex] = start;
+      endDates[selectedTabIndex] = end;
+      filterOrders();
+    });
+  }
+
+  void clearFilter() {
+    setState(() {
+      startDates[selectedTabIndex] = null;
+      endDates[selectedTabIndex] = null;
+      filterOrders();
+    });
   }
 
   void handleTabSelected(int index) {
@@ -63,55 +99,17 @@ class _OrdersPageState extends State<OrderPage> {
   }
 
   void filterOrders() {
-    if (isStatusSelected) {
-      switch (selectedTabIndex) {
-        case 0:
-          filteredOrders = orders
-              .where((order) =>
-                  order.status == 'Pesanan Baru' && orderMatchesSearch(order))
-              .toList();
-          break;
-        case 1:
-          filteredOrders = orders
-              .where((order) =>
-                  order.status == 'Diproduksi' && orderMatchesSearch(order))
-              .toList();
-          break;
-        case 2:
-          filteredOrders = orders
-              .where((order) =>
-                  order.status == 'Dikemas' && orderMatchesSearch(order))
-              .toList();
-          break;
-        case 3:
-          filteredOrders = orders
-              .where((order) =>
-                  order.status == 'Siap diambil' && orderMatchesSearch(order))
-              .toList();
-          break;
-      }
-    } else {
-      switch (selectedTabIndex) {
-        case 0:
-          filteredOrders = orders
-              .where((order) =>
-                  order.status == 'Selesai' && orderMatchesSearch(order))
-              .toList();
-          break;
-        case 1:
-          filteredOrders = orders
-              .where((order) =>
-                  order.status == 'Dibatalkan' && orderMatchesSearch(order))
-              .toList();
-          break;
-        case 2:
-          filteredOrders = orders
-              .where((order) =>
-                  order.status == 'Ditolak' && orderMatchesSearch(order))
-              .toList();
-          break;
-      }
-    }
+    DateTime? startDate = startDates[selectedTabIndex];
+    DateTime? endDate = endDates[selectedTabIndex];
+    filteredOrders = orders.where((order) {
+      bool matchesSearch = orderMatchesSearch(order);
+      bool matchesStatus =
+          order.status == getStatusByTabIndex(selectedTabIndex);
+      bool matchesDate =
+          (startDate == null || order.orderDate.isAfter(startDate)) &&
+              (endDate == null || order.orderDate.isBefore(endDate));
+      return matchesSearch && matchesStatus && matchesDate;
+    }).toList();
   }
 
   bool orderMatchesSearch(Order order) {
@@ -273,26 +271,38 @@ class _OrdersPageState extends State<OrderPage> {
             onSearch: handleSearch,
             onFilterPressed: handleFilterPressed,
           ),
-          Expanded(
-            child: ListView.builder(
-              padding: EdgeInsets.zero,
-              itemCount: filteredOrders.length,
-              itemBuilder: (context, index) {
-                return OrderCard(
-                  order: filteredOrders[index],
-                  // items:context,index, // Pass the appropriate order items
-                  onUpdateStatus: () {
-                    if (filteredOrders[index].status == 'Siap diambil') {
-                      handleCompleteOrder(filteredOrders[index]);
-                    } else {
-                      handleShowUpdateDialog(filteredOrders[index]);
-                    }
-                  },
-                  onAccept: () => handleAcceptOrder(filteredOrders[index]),
-                  onReject: () => handleRejectOrder(filteredOrders[index]),
-                );
-              },
+          if (startDates[selectedTabIndex] != null &&
+              endDates[selectedTabIndex] != null)
+            FilterIndicator(
+              startDate: startDates[selectedTabIndex],
+              endDate: endDates[selectedTabIndex],
+              onClearFilter: clearFilter,
             ),
+          Expanded(
+            child: filteredOrders.isEmpty
+                ? EmptyState(
+                    message: 'Tidak ada pesanan yang ditemukan',
+                    icon: Icons.inbox)
+                : ListView.builder(
+                    padding: EdgeInsets.zero,
+                    itemCount: filteredOrders.length,
+                    itemBuilder: (context, index) {
+                      return OrderCard(
+                        order: filteredOrders[index],
+                        onUpdateStatus: () {
+                          if (filteredOrders[index].status == 'Siap diambil') {
+                            handleCompleteOrder(filteredOrders[index]);
+                          } else {
+                            handleShowUpdateDialog(filteredOrders[index]);
+                          }
+                        },
+                        onAccept: () =>
+                            handleAcceptOrder(filteredOrders[index]),
+                        onReject: () =>
+                            handleRejectOrder(filteredOrders[index]),
+                      );
+                    },
+                  ),
           ),
         ],
       ),

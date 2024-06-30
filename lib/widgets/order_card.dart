@@ -84,11 +84,11 @@ class OrderCard extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(height: 4.0),
-                        Text('Tanggal Pesan: ${order.orderDate}', style: TextStyles.b1.copyWith(color: Colors.black),),
+                        Text('Tanggal Pesan: ${order.formattedOrderDate}', style: TextStyles.b1.copyWith(color: Colors.black),),
                         const SizedBox(height: 4.0),
                         Row(
                           children: [
-                            Text('Waktu Ambil: ${order.pickupDate}', style: TextStyles.b1.copyWith(color: Colors.black),),
+                            Text('Waktu Ambil: ${order.formattedPickupDate}', style: TextStyles.b1.copyWith(color: Colors.black),),
                             const SizedBox(width: 8.0),
                           ],
                         ),

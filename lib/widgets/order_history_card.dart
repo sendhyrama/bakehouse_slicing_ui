@@ -1,5 +1,6 @@
 // lib/widgets/order_history_card.dart
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import '../models/order.dart';
 
 class OrderHistoryCard extends StatelessWidget {
@@ -9,6 +10,8 @@ class OrderHistoryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final DateFormat dateFormat = DateFormat('dd/MM/yyyy');
+
     return Card(
       margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
       shape: RoundedRectangleBorder(
@@ -38,7 +41,7 @@ class OrderHistoryCard extends StatelessWidget {
                     style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
                   ),
                   Text(order.customerName),
-                  Text('${order.pickupDate.split(' ')[0]} ${order.pickupDate.split(' ')[1]}'),
+                  Text(dateFormat.format(order.pickupDate)),
                 ],
               ),
             ),

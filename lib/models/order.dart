@@ -1,10 +1,12 @@
 // lib/models/order.dart
+import 'package:intl/intl.dart';
+
 import 'order_item.dart';
 
 class Order {
   final String orderNumber;
-  final String orderDate;
-  final String pickupDate;
+  final DateTime orderDate;
+  final DateTime pickupDate;
   final String customerName;
   final double total;
   final String imageUrl;
@@ -28,8 +30,8 @@ class Order {
     return [
       Order(
         orderNumber: 'NP24030AKM',
-        orderDate: '10/05/2024',
-        pickupDate: '11/05/2024',
+        orderDate: DateTime.parse('2024-05-10'),
+        pickupDate: DateTime.parse('2024-05-11'),
         customerName: 'Radinka',
         total: 170690,
         imageUrl:
@@ -72,10 +74,10 @@ class Order {
         note: 'Request dikasih tulisan Happy Birthday',
       ),
       Order(
-        orderNumber: 'NP26030BTY',
-        orderDate: '10/05/2024',
-        pickupDate: '11/05/2024',
-        customerName: 'Hilmy',
+        orderNumber: 'NP24030AKM',
+        orderDate: DateTime.parse('2024-05-10'),
+        pickupDate: DateTime.parse('2024-05-11'),
+        customerName: 'Radinka',
         total: 170690,
         imageUrl:
             'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
@@ -105,7 +107,7 @@ class Order {
           OrderItem(
             name: 'Vegan Donut',
             size: 'Small',
-            variant: 'gatau',
+            variant: 'Gatau',
             quantity: 8,
             pricePerUnit: 8000,
             imageUrl:
@@ -114,13 +116,13 @@ class Order {
             unit: 'Pcs',
           ),
         ],
-        note: 'sendhy cakeppp',
+        note: 'Request dikasih tulisan Happy Birthday',
       ),
       Order(
-        orderNumber: 'NP26030BTS',
-        orderDate: '10/05/2024',
-        pickupDate: '11/05/2024',
-        customerName: 'Sendhy',
+        orderNumber: 'NP24030AKM',
+        orderDate: DateTime.parse('2024-05-10'),
+        pickupDate: DateTime.parse('2024-05-11'),
+        customerName: 'Radinka',
         total: 170690,
         imageUrl:
             'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
@@ -150,7 +152,7 @@ class Order {
           OrderItem(
             name: 'Vegan Donut',
             size: 'Small',
-            variant: 'gatau',
+            variant: 'Gatau',
             quantity: 8,
             pricePerUnit: 8000,
             imageUrl:
@@ -159,13 +161,13 @@ class Order {
             unit: 'Pcs',
           ),
         ],
-        note: 'sendhy cakeppp',
+        note: 'Request dikasih tulisan Happy Birthday',
       ),
       Order(
-        orderNumber: 'NP26030BTX',
-        orderDate: '10/05/2024',
-        pickupDate: '11/05/2024',
-        customerName: 'Ramadhinata',
+        orderNumber: 'NP24030AKM',
+        orderDate: DateTime.parse('2024-05-10'),
+        pickupDate: DateTime.parse('2024-05-11'),
+        customerName: 'Radinka',
         total: 170690,
         imageUrl:
             'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
@@ -195,7 +197,7 @@ class Order {
           OrderItem(
             name: 'Vegan Donut',
             size: 'Small',
-            variant: 'gatau',
+            variant: 'Gatau',
             quantity: 8,
             pricePerUnit: 8000,
             imageUrl:
@@ -204,13 +206,13 @@ class Order {
             unit: 'Pcs',
           ),
         ],
-        note: 'sendhy cakeppp',
+        note: 'Request dikasih tulisan Happy Birthday',
       ),
       Order(
-        orderNumber: 'NP26030BTJ',
-        orderDate: '10/05/2024',
-        pickupDate: '11/05/2024',
-        customerName: 'Pak Agus',
+        orderNumber: 'NP24030AKM',
+        orderDate: DateTime.parse('2024-05-10'),
+        pickupDate: DateTime.parse('2024-05-11'),
+        customerName: 'Radinka',
         total: 170690,
         imageUrl:
             'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
@@ -240,7 +242,7 @@ class Order {
           OrderItem(
             name: 'Vegan Donut',
             size: 'Small',
-            variant: 'gatau',
+            variant: 'Gatau',
             quantity: 8,
             pricePerUnit: 8000,
             imageUrl:
@@ -249,10 +251,240 @@ class Order {
             unit: 'Pcs',
           ),
         ],
-        note: 'sendhy cakeppp',
+        note: 'Request dikasih tulisan Happy Birthday',
       ),
+      Order(
+        orderNumber: 'NP24030AKM',
+        orderDate: DateTime.parse('2024-05-10'),
+        pickupDate: DateTime.parse('2024-05-11'),
+        customerName: 'Radinka',
+        total: 170690,
+        imageUrl:
+            'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+        items: [
+          OrderItem(
+            name: 'Choco Cake',
+            size: 'D18',
+            variant: 'Gluten-free',
+            quantity: 2,
+            pricePerUnit: 35000,
+            imageUrl:
+                'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+            amount: 2,
+            unit: 'Slice',
+          ),
+          OrderItem(
+            name: 'Lemon Tartlet',
+            size: 'D18',
+            variant: 'Gluten-free',
+            quantity: 1,
+            pricePerUnit: 35000,
+            imageUrl:
+                'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+            amount: 1,
+            unit: 'Slice',
+          ),
+          OrderItem(
+            name: 'Vegan Donut',
+            size: 'Small',
+            variant: 'Gatau',
+            quantity: 8,
+            pricePerUnit: 8000,
+            imageUrl:
+                'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+            amount: 8,
+            unit: 'Pcs',
+          ),
+        ],
+        note: 'Request dikasih tulisan Happy Birthday',
+      ),
+      Order(
+        orderNumber: 'NP24030AKM',
+        orderDate: DateTime.parse('2024-05-10'),
+        pickupDate: DateTime.parse('2024-05-11'),
+        customerName: 'Radinka',
+        total: 170690,
+        imageUrl:
+            'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+        items: [
+          OrderItem(
+            name: 'Choco Cake',
+            size: 'D18',
+            variant: 'Gluten-free',
+            quantity: 2,
+            pricePerUnit: 35000,
+            imageUrl:
+                'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+            amount: 2,
+            unit: 'Slice',
+          ),
+          OrderItem(
+            name: 'Lemon Tartlet',
+            size: 'D18',
+            variant: 'Gluten-free',
+            quantity: 1,
+            pricePerUnit: 35000,
+            imageUrl:
+                'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+            amount: 1,
+            unit: 'Slice',
+          ),
+          OrderItem(
+            name: 'Vegan Donut',
+            size: 'Small',
+            variant: 'Gatau',
+            quantity: 8,
+            pricePerUnit: 8000,
+            imageUrl:
+                'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+            amount: 8,
+            unit: 'Pcs',
+          ),
+        ],
+        note: 'Request dikasih tulisan Happy Birthday',
+      ),
+      Order(
+        orderNumber: 'NP24030AKM',
+        orderDate: DateTime.parse('2024-05-10'),
+        pickupDate: DateTime.parse('2024-05-11'),
+        customerName: 'Radinka',
+        total: 170690,
+        imageUrl:
+            'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+        items: [
+          OrderItem(
+            name: 'Choco Cake',
+            size: 'D18',
+            variant: 'Gluten-free',
+            quantity: 2,
+            pricePerUnit: 35000,
+            imageUrl:
+                'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+            amount: 2,
+            unit: 'Slice',
+          ),
+          OrderItem(
+            name: 'Lemon Tartlet',
+            size: 'D18',
+            variant: 'Gluten-free',
+            quantity: 1,
+            pricePerUnit: 35000,
+            imageUrl:
+                'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+            amount: 1,
+            unit: 'Slice',
+          ),
+          OrderItem(
+            name: 'Vegan Donut',
+            size: 'Small',
+            variant: 'Gatau',
+            quantity: 8,
+            pricePerUnit: 8000,
+            imageUrl:
+                'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+            amount: 8,
+            unit: 'Pcs',
+          ),
+        ],
+        note: 'Request dikasih tulisan Happy Birthday',
+      ),
+      Order(
+        orderNumber: 'NP24030AKM',
+        orderDate: DateTime.parse('2024-05-10'),
+        pickupDate: DateTime.parse('2024-05-11'),
+        customerName: 'Radinka',
+        total: 170690,
+        imageUrl:
+            'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+        items: [
+          OrderItem(
+            name: 'Choco Cake',
+            size: 'D18',
+            variant: 'Gluten-free',
+            quantity: 2,
+            pricePerUnit: 35000,
+            imageUrl:
+                'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+            amount: 2,
+            unit: 'Slice',
+          ),
+          OrderItem(
+            name: 'Lemon Tartlet',
+            size: 'D18',
+            variant: 'Gluten-free',
+            quantity: 1,
+            pricePerUnit: 35000,
+            imageUrl:
+                'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+            amount: 1,
+            unit: 'Slice',
+          ),
+          OrderItem(
+            name: 'Vegan Donut',
+            size: 'Small',
+            variant: 'Gatau',
+            quantity: 8,
+            pricePerUnit: 8000,
+            imageUrl:
+                'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+            amount: 8,
+            unit: 'Pcs',
+          ),
+        ],
+        note: 'Request dikasih tulisan Happy Birthday',
+      ),
+      Order(
+        orderNumber: 'NP24030AKM',
+        orderDate: DateTime.parse('2024-05-10'),
+        pickupDate: DateTime.parse('2024-05-11'),
+        customerName: 'Radinka',
+        total: 170690,
+        imageUrl:
+            'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+        items: [
+          OrderItem(
+            name: 'Choco Cake',
+            size: 'D18',
+            variant: 'Gluten-free',
+            quantity: 2,
+            pricePerUnit: 35000,
+            imageUrl:
+                'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+            amount: 2,
+            unit: 'Slice',
+          ),
+          OrderItem(
+            name: 'Lemon Tartlet',
+            size: 'D18',
+            variant: 'Gluten-free',
+            quantity: 1,
+            pricePerUnit: 35000,
+            imageUrl:
+                'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+            amount: 1,
+            unit: 'Slice',
+          ),
+          OrderItem(
+            name: 'Vegan Donut',
+            size: 'Small',
+            variant: 'Gatau',
+            quantity: 8,
+            pricePerUnit: 8000,
+            imageUrl:
+                'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+            amount: 8,
+            unit: 'Pcs',
+          ),
+        ],
+        note: 'Request dikasih tulisan Happy Birthday',
+      ),
+      // Other mock orders...
     ];
   }
+
+  String get formattedOrderDate => DateFormat('dd/MM/yyyy').format(orderDate);
+
+  String get formattedPickupDate => DateFormat('dd/MM/yyyy').format(pickupDate);
 
   double get subtotal {
     return items.fold(0, (sum, item) => sum + item.totalPrice);

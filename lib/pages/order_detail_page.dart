@@ -1,9 +1,10 @@
 // lib/pages/order_detail_page.dart
 import 'package:flutter/material.dart';
-import '../common/colors.dart';
-import '../common/text_styles.dart';
+import 'package:intl/intl.dart'; // Import the intl package
 import '../models/order.dart';
 import '../models/order_item.dart';
+import '../common/colors.dart';
+import '../common/text_styles.dart';
 
 class OrderDetailPage extends StatelessWidget {
   final Order order;
@@ -58,7 +59,7 @@ class OrderDetailPage extends StatelessWidget {
                   children: [
                     Text('Tanggal Pesan',
                         style: TextStyles.b1.copyWith(color: Colors.grey)),
-                    Text(order.orderDate, style: TextStyles.b1),
+                    Text(order.formattedOrderDate, style: TextStyles.b1),
                   ],
                 ),
                 Column(
@@ -66,7 +67,7 @@ class OrderDetailPage extends StatelessWidget {
                   children: [
                     Text('Waktu Ambil',
                         style: TextStyles.b1.copyWith(color: Colors.grey)),
-                    Text(order.pickupDate, style: TextStyles.b1),
+                    Text(order.formattedPickupDate, style: TextStyles.b1),
                   ],
                 ),
               ],
@@ -121,7 +122,8 @@ class OrderDetailPage extends StatelessWidget {
                                     ),
                                     Text(
                                       '${items[index].quantity} x Rp ${items[index].pricePerUnit.toStringAsFixed(0)}',
-                                      style: TextStyles.b1.copyWith(color: PrimaryColor.c6),
+                                      style: TextStyles.b1
+                                          .copyWith(color: PrimaryColor.c6),
                                     ),
                                   ]),
                               Row(
