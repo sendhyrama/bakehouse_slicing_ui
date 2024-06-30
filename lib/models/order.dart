@@ -41,7 +41,7 @@ class Order {
         customerName: 'Radinka',
         total: 170690,
         imageUrl:
-            'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+            'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto1.png',
         items: [
           OrderItem(
             name: 'Choco Cake',
@@ -50,7 +50,7 @@ class Order {
             quantity: 2,
             pricePerUnit: 35000,
             imageUrl:
-                'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+                'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto1.png',
             amount: 2,
             unit: 'Slice',
           ),
@@ -61,7 +61,7 @@ class Order {
             quantity: 1,
             pricePerUnit: 35000,
             imageUrl:
-                'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+                'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto2.png',
             amount: 1,
             unit: 'Slice',
           ),
@@ -72,7 +72,7 @@ class Order {
             quantity: 8,
             pricePerUnit: 8000,
             imageUrl:
-                'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+                'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto3.png',
             amount: 8,
             unit: 'Pcs',
           ),
@@ -94,7 +94,7 @@ class Order {
         customerName: 'Radinka',
         total: 170690,
         imageUrl:
-            'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+            'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto2.png',
         items: [
           OrderItem(
             name: 'Choco Cake',
@@ -103,7 +103,7 @@ class Order {
             quantity: 2,
             pricePerUnit: 35000,
             imageUrl:
-                'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+                'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto2.png',
             amount: 2,
             unit: 'Slice',
           ),
@@ -114,7 +114,7 @@ class Order {
             quantity: 1,
             pricePerUnit: 35000,
             imageUrl:
-                'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+                'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto3.png',
             amount: 1,
             unit: 'Slice',
           ),
@@ -125,7 +125,7 @@ class Order {
             quantity: 8,
             pricePerUnit: 8000,
             imageUrl:
-                'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+                'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto4.png',
             amount: 8,
             unit: 'Pcs',
           ),
@@ -147,7 +147,7 @@ class Order {
         customerName: 'Radinka',
         total: 170690,
         imageUrl:
-            'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+            'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto3.png',
         items: [
           OrderItem(
             name: 'Choco Cake',
@@ -156,7 +156,7 @@ class Order {
             quantity: 2,
             pricePerUnit: 35000,
             imageUrl:
-                'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+                'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto3.png',
             amount: 2,
             unit: 'Slice',
           ),
@@ -167,7 +167,7 @@ class Order {
             quantity: 1,
             pricePerUnit: 35000,
             imageUrl:
-                'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+                'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto4.png',
             amount: 1,
             unit: 'Slice',
           ),
@@ -178,7 +178,7 @@ class Order {
             quantity: 8,
             pricePerUnit: 8000,
             imageUrl:
-                'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+                'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto5.png',
             amount: 8,
             unit: 'Pcs',
           ),
@@ -200,7 +200,7 @@ class Order {
         customerName: 'Radinka',
         total: 170690,
         imageUrl:
-            'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+            'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto4.png',
         items: [
           OrderItem(
             name: 'Choco Cake',
@@ -209,7 +209,7 @@ class Order {
             quantity: 2,
             pricePerUnit: 35000,
             imageUrl:
-                'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+                'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto4.png',
             amount: 2,
             unit: 'Slice',
           ),
@@ -220,7 +220,7 @@ class Order {
             quantity: 1,
             pricePerUnit: 35000,
             imageUrl:
-                'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+                'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto5.png',
             amount: 1,
             unit: 'Slice',
           ),
@@ -231,7 +231,7 @@ class Order {
             quantity: 8,
             pricePerUnit: 8000,
             imageUrl:
-                'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+                'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto1.png',
             amount: 8,
             unit: 'Pcs',
           ),
@@ -253,7 +253,7 @@ class Order {
         customerName: 'Radinka',
         total: 170690,
         imageUrl:
-            'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+            'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto5.png',
         items: [
           OrderItem(
             name: 'Choco Cake',
@@ -262,7 +262,7 @@ class Order {
             quantity: 2,
             pricePerUnit: 35000,
             imageUrl:
-                'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+                'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto5.png',
             amount: 2,
             unit: 'Slice',
           ),
@@ -273,7 +273,7 @@ class Order {
             quantity: 1,
             pricePerUnit: 35000,
             imageUrl:
-                'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+                'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto1.png',
             amount: 1,
             unit: 'Slice',
           ),
@@ -284,272 +284,7 @@ class Order {
             quantity: 8,
             pricePerUnit: 8000,
             imageUrl:
-                'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
-            amount: 8,
-            unit: 'Pcs',
-          ),
-        ],
-        note: 'Request dikasih tulisan Happy Birthday',
-        rating: 5,
-        reviewText:
-            'Kue coklat nya enak, pas banget rasanya ga bikin eneg temen-temen juga suka 🥰',
-        reviewImages: [
-          'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
-          'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
-          'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
-        ],
-      ),
-      Order(
-        orderNumber: 'NP24030AKM',
-        orderDate: DateTime.parse('2024-05-10'),
-        pickupDate: DateTime.parse('2024-05-11'),
-        customerName: 'Radinka',
-        total: 170690,
-        imageUrl:
-            'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
-        items: [
-          OrderItem(
-            name: 'Choco Cake',
-            size: 'D18',
-            variant: 'Gluten-free',
-            quantity: 2,
-            pricePerUnit: 35000,
-            imageUrl:
-                'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
-            amount: 2,
-            unit: 'Slice',
-          ),
-          OrderItem(
-            name: 'Lemon Tartlet',
-            size: 'D18',
-            variant: 'Gluten-free',
-            quantity: 1,
-            pricePerUnit: 35000,
-            imageUrl:
-                'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
-            amount: 1,
-            unit: 'Slice',
-          ),
-          OrderItem(
-            name: 'Vegan Donut',
-            size: 'Small',
-            variant: 'Gatau',
-            quantity: 8,
-            pricePerUnit: 8000,
-            imageUrl:
-                'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
-            amount: 8,
-            unit: 'Pcs',
-          ),
-        ],
-        note: 'Request dikasih tulisan Happy Birthday',
-        rating: 5,
-        reviewText:
-            'Kue coklat nya enak, pas banget rasanya ga bikin eneg temen-temen juga suka 🥰',
-        reviewImages: [
-          'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
-          'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
-          'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
-        ],
-      ),
-      Order(
-        orderNumber: 'NP24030AKM',
-        orderDate: DateTime.parse('2024-05-10'),
-        pickupDate: DateTime.parse('2024-05-11'),
-        customerName: 'Radinka',
-        total: 170690,
-        imageUrl:
-            'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
-        items: [
-          OrderItem(
-            name: 'Choco Cake',
-            size: 'D18',
-            variant: 'Gluten-free',
-            quantity: 2,
-            pricePerUnit: 35000,
-            imageUrl:
-                'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
-            amount: 2,
-            unit: 'Slice',
-          ),
-          OrderItem(
-            name: 'Lemon Tartlet',
-            size: 'D18',
-            variant: 'Gluten-free',
-            quantity: 1,
-            pricePerUnit: 35000,
-            imageUrl:
-                'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
-            amount: 1,
-            unit: 'Slice',
-          ),
-          OrderItem(
-            name: 'Vegan Donut',
-            size: 'Small',
-            variant: 'Gatau',
-            quantity: 8,
-            pricePerUnit: 8000,
-            imageUrl:
-                'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
-            amount: 8,
-            unit: 'Pcs',
-          ),
-        ],
-        note: 'Request dikasih tulisan Happy Birthday',
-        rating: 5,
-        reviewText:
-            'Kue coklat nya enak, pas banget rasanya ga bikin eneg temen-temen juga suka 🥰',
-        reviewImages: [
-          'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
-          'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
-          'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
-        ],
-      ),
-      Order(
-        orderNumber: 'NP24030AKM',
-        orderDate: DateTime.parse('2024-05-10'),
-        pickupDate: DateTime.parse('2024-05-11'),
-        customerName: 'Radinka',
-        total: 170690,
-        imageUrl:
-            'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
-        items: [
-          OrderItem(
-            name: 'Choco Cake',
-            size: 'D18',
-            variant: 'Gluten-free',
-            quantity: 2,
-            pricePerUnit: 35000,
-            imageUrl:
-                'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
-            amount: 2,
-            unit: 'Slice',
-          ),
-          OrderItem(
-            name: 'Lemon Tartlet',
-            size: 'D18',
-            variant: 'Gluten-free',
-            quantity: 1,
-            pricePerUnit: 35000,
-            imageUrl:
-                'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
-            amount: 1,
-            unit: 'Slice',
-          ),
-          OrderItem(
-            name: 'Vegan Donut',
-            size: 'Small',
-            variant: 'Gatau',
-            quantity: 8,
-            pricePerUnit: 8000,
-            imageUrl:
-                'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
-            amount: 8,
-            unit: 'Pcs',
-          ),
-        ],
-        note: 'Request dikasih tulisan Happy Birthday',
-        rating: 5,
-        reviewText:
-            'Kue coklat nya enak, pas banget rasanya ga bikin eneg temen-temen juga suka 🥰',
-        reviewImages: [
-          'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
-          'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
-          'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
-        ],
-      ),
-      Order(
-        orderNumber: 'NP24030AKM',
-        orderDate: DateTime.parse('2024-05-10'),
-        pickupDate: DateTime.parse('2024-05-11'),
-        customerName: 'Radinka',
-        total: 170690,
-        imageUrl:
-            'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
-        items: [
-          OrderItem(
-            name: 'Choco Cake',
-            size: 'D18',
-            variant: 'Gluten-free',
-            quantity: 2,
-            pricePerUnit: 35000,
-            imageUrl:
-                'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
-            amount: 2,
-            unit: 'Slice',
-          ),
-          OrderItem(
-            name: 'Lemon Tartlet',
-            size: 'D18',
-            variant: 'Gluten-free',
-            quantity: 1,
-            pricePerUnit: 35000,
-            imageUrl:
-                'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
-            amount: 1,
-            unit: 'Slice',
-          ),
-          OrderItem(
-            name: 'Vegan Donut',
-            size: 'Small',
-            variant: 'Gatau',
-            quantity: 8,
-            pricePerUnit: 8000,
-            imageUrl:
-                'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
-            amount: 8,
-            unit: 'Pcs',
-          ),
-        ],
-        note: 'Request dikasih tulisan Happy Birthday',
-        rating: 5,
-        reviewText:
-            'Kue coklat nya enak, pas banget rasanya ga bikin eneg temen-temen juga suka 🥰',
-        reviewImages: [
-          'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
-          'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
-          'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
-        ],
-      ),
-      Order(
-        orderNumber: 'NP24030AKM',
-        orderDate: DateTime.parse('2024-05-10'),
-        pickupDate: DateTime.parse('2024-05-11'),
-        customerName: 'Radinka',
-        total: 170690,
-        imageUrl:
-            'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
-        items: [
-          OrderItem(
-            name: 'Choco Cake',
-            size: 'D18',
-            variant: 'Gluten-free',
-            quantity: 2,
-            pricePerUnit: 35000,
-            imageUrl:
-                'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
-            amount: 2,
-            unit: 'Slice',
-          ),
-          OrderItem(
-            name: 'Lemon Tartlet',
-            size: 'D18',
-            variant: 'Gluten-free',
-            quantity: 1,
-            pricePerUnit: 35000,
-            imageUrl:
-                'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
-            amount: 1,
-            unit: 'Slice',
-          ),
-          OrderItem(
-            name: 'Vegan Donut',
-            size: 'Small',
-            variant: 'Gatau',
-            quantity: 8,
-            pricePerUnit: 8000,
-            imageUrl:
-                'https://storage.googleapis.com/bucket-sendhyrama/sendhy-with-lil-sister.jpg',
+                'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto2.png',
             amount: 8,
             unit: 'Pcs',
           ),

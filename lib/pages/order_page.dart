@@ -2,6 +2,7 @@
 import 'package:bakehouse_slicing_ui/widgets/empty_state.dart';
 import 'package:bakehouse_slicing_ui/widgets/order_page_header.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import '../models/order.dart';
 import '../widgets/order_card.dart';
 import '../widgets/order_history_card.dart';
@@ -219,9 +220,9 @@ class _OrdersPageState extends State<OrderPage> {
           onConfirm: () {
             setState(() {
               order.status = 'Selesai';
+              orders.remove(order); // Remove from current list
+              orders.add(order); // Add to the end of the list to move it
               filterOrders();
-              isStatusSelected = false;
-              selectedTabIndex = 0;
             });
             Navigator.of(context).pop();
           },
@@ -284,30 +285,38 @@ class _OrdersPageState extends State<OrderPage> {
             child: filteredOrders.isEmpty
                 ? EmptyState(
                     message: 'Tidak ada pesanan yang ditemukan',
-                    icon: Icons.inbox)
+                    icon: SvgPicture.asset(
+                      'assets/icons/not-found.svg',
+                      width: 120,
+                      height: 120,
+                    ))
                 : ListView.builder(
-                padding: EdgeInsets.zero,
-                itemCount: filteredOrders.length,
-                itemBuilder: (context, index) {
-                  if (filteredOrders[index].status == 'Selesai' || filteredOrders[index].status == 'Ditolak') {
-                    return OrderHistoryCard(order: filteredOrders[index]);
-                  } else {
-                    return OrderCard(
-                      order: filteredOrders[index],
-                      // items:context,index, // Pass the appropriate order items
-                      onUpdateStatus: () {
-                        if (filteredOrders[index].status == 'Siap diambil') {
-                          handleCompleteOrder(filteredOrders[index]);
-                        } else {
-                          handleShowUpdateDialog(filteredOrders[index]);
-                        }
-                      },
-                      onAccept: () => handleAcceptOrder(filteredOrders[index]),
-                      onReject: () => handleRejectOrder(filteredOrders[index]),
-                    );
-                  }
-                },
-              ),
+                    padding: EdgeInsets.zero,
+                    itemCount: filteredOrders.length,
+                    itemBuilder: (context, index) {
+                      if (filteredOrders[index].status == 'Selesai' ||
+                          filteredOrders[index].status == 'Ditolak') {
+                        return OrderHistoryCard(order: filteredOrders[index]);
+                      } else {
+                        return OrderCard(
+                          order: filteredOrders[index],
+                          // items:context,index, // Pass the appropriate order items
+                          onUpdateStatus: () {
+                            if (filteredOrders[index].status ==
+                                'Siap diambil') {
+                              handleCompleteOrder(filteredOrders[index]);
+                            } else {
+                              handleShowUpdateDialog(filteredOrders[index]);
+                            }
+                          },
+                          onAccept: () =>
+                              handleAcceptOrder(filteredOrders[index]),
+                          onReject: () =>
+                              handleRejectOrder(filteredOrders[index]),
+                        );
+                      }
+                    },
+                  ),
           ),
         ],
       ),
