@@ -39,7 +39,7 @@ class Order {
       Order(
         orderNumber: 'NP24034AKD',
         orderDate: DateTime.parse('2024-05-10'),
-        pickupDate: DateTime.parse('2024-05-11'),
+        pickupDate: DateTime.parse('2024-05-11 08:00'),
         customerName: 'Radinka',
         customerNumber: '628113300039',
         total: 170690,
@@ -90,7 +90,7 @@ class Order {
       Order(
         orderNumber: 'NP24031AKA',
         orderDate: DateTime.parse('2024-05-10'),
-        pickupDate: DateTime.parse('2024-05-11'),
+        pickupDate: DateTime.parse('2024-05-11 08:00'),
         customerName: 'Radinka',
         customerNumber: '628113300039',
         total: 170690,
@@ -130,8 +130,7 @@ class Order {
         ],
         note: 'Request dikasih tulisan "Semhastulation!"',
         rating: 5,
-        reviewText:
-            'Mantap!',
+        reviewText: 'Mantap!',
         reviewImages: [
           'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto2.png',
           'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto2.png',
@@ -141,7 +140,7 @@ class Order {
       Order(
         orderNumber: 'NP24032AKB',
         orderDate: DateTime.parse('2024-05-10'),
-        pickupDate: DateTime.parse('2024-05-11'),
+        pickupDate: DateTime.parse('2024-05-11 08:00'),
         customerName: 'Radinka',
         customerNumber: '628113300039',
         total: 170690,
@@ -181,8 +180,7 @@ class Order {
         ],
         note: 'Tidak ada',
         rating: 5,
-        reviewText:
-            'Enak pake bangett!',
+        reviewText: 'Enak pake bangett!',
         reviewImages: [
           'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto3.png',
           'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto3.png',
@@ -192,9 +190,9 @@ class Order {
       Order(
         orderNumber: 'NP24033AKC',
         orderDate: DateTime.parse('2024-05-10'),
-        pickupDate: DateTime.parse('2024-05-11'),
+        pickupDate: DateTime.parse('2024-05-12 13:00'),
         customerName: 'Sendhy',
-        customerNumber: '628113300039',
+        customerNumber: '6282150103051',
         total: 170690,
         imageUrl:
             'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto4.png',
@@ -232,8 +230,7 @@ class Order {
         ],
         note: 'Request dikasih tulisan "Hai kamu, hbd ya!"',
         rating: 5,
-        reviewText:
-            'Enak teksturnya lembut, worth to try!',
+        reviewText: 'Enak teksturnya lembut, worth to try!',
         reviewImages: [
           'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto4.png',
           'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto4.png',
@@ -243,9 +240,9 @@ class Order {
       Order(
         orderNumber: 'NP24030AKM',
         orderDate: DateTime.parse('2024-05-10'),
-        pickupDate: DateTime.parse('2024-05-11'),
+        pickupDate: DateTime.parse('2024-05-12 13:00'),
         customerName: 'Sendhy',
-        customerNumber: '628113300039',
+        customerNumber: '6282150103051',
         total: 170690,
         imageUrl:
             'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto5.png',
@@ -283,8 +280,7 @@ class Order {
         ],
         note: 'semangat skripsinyaa!',
         rating: 5,
-        reviewText:
-            'Pertama kali nyoba kue seenak inii',
+        reviewText: 'Pertama kali nyoba kue seenak inii',
         reviewImages: [
           'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto5.png',
           'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto5.png',
@@ -297,7 +293,8 @@ class Order {
 
   String get formattedOrderDate => DateFormat('dd/MM/yyyy').format(orderDate);
 
-  String get formattedPickupDate => DateFormat('dd/MM/yyyy').format(pickupDate);
+  String get formattedPickupDate =>
+      DateFormat('dd/MM/yyyy HH:mm').format(pickupDate);
 
   double get subtotal {
     return items.fold(0, (sum, item) => sum + item.totalPrice);

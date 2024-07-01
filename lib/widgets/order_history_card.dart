@@ -50,10 +50,12 @@ class OrderHistoryCard extends StatelessWidget {
                             order.orderNumber,
                             style: TextStyles.b1.copyWith(color: Colors.red),
                           ),
+                          const SizedBox(height: 4.0),
                           Text(
                             order.customerName,
                             style: TextStyles.b1,
                           ),
+                          const SizedBox(height: 4.0),
                           Text(
                             order.formattedPickupDate,
                             style: TextStyles.b1,

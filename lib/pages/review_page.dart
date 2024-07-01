@@ -51,7 +51,7 @@ class ReviewPage extends StatelessWidget {
                   children: [
                     Text('Tanggal Pesan',
                         style: TextStyles.b1.copyWith(color: Colors.grey)),
-                    Text(DateFormat('dd/MM/yyyy').format(order.orderDate),
+                    Text(order.formattedOrderDate,
                         style: TextStyles.b1),
                   ],
                 ),
@@ -60,7 +60,7 @@ class ReviewPage extends StatelessWidget {
                   children: [
                     Text('Waktu Ambil',
                         style: TextStyles.b1.copyWith(color: Colors.grey)),
-                    Text(DateFormat('dd/MM/yyyy').format(order.pickupDate),
+                    Text(order.formattedPickupDate,
                         style: TextStyles.b1),
                   ],
                 ),
