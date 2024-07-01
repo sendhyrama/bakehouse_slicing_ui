@@ -67,7 +67,7 @@ class OrderDetailPage extends StatelessWidget {
                   children: [
                     Text('Waktu Ambil',
                         style: TextStyles.b1.copyWith(color: Colors.grey)),
-                    Text(order.formattedPickupDate, style: TextStyles.b1),
+                    Text(order.formattedPickupDateTime, style: TextStyles.b1),
                   ],
                 ),
               ],

@@ -1,4 +1,3 @@
-// lib/widgets/order_card.dart
 import 'dart:io';
 
 import 'package:bakehouse_slicing_ui/common/colors.dart';
@@ -81,66 +80,81 @@ class OrderCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(12.0),
                     child: Image.network(
                       order.imageUrl,
-                      width: 100,
-                      height: 100,
+                      width: 128,
+                      height: 128,
                       fit: BoxFit.cover,
                     ),
                   ),
-                  const SizedBox(width: 16.0),
+                  const SizedBox(width: 12.0),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        RichText(
-                          text: TextSpan(
-                            children: [
-                              TextSpan(
-                                text: 'No. Pesanan: ',
+                        Row(
+                          children: [
+                            Text('No. Pesanan',
+                                style: TextStyles.b1
+                                    .copyWith(color: Colors.black)),
+                            const Spacer(),
+                            Text(order.orderNumber,
                                 style:
-                                    TextStyles.b1.copyWith(color: Colors.black),
-                              ),
-                              TextSpan(
-                                text: order.orderNumber,
-                                style:
-                                    TextStyles.b1.copyWith(color: Colors.red),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Text(
-                          'Tanggal Pesan: ${order.formattedOrderDate}',
-                          style: TextStyles.b1.copyWith(color: Colors.black),
+                                    TextStyles.b1.copyWith(color: Colors.red)),
+                          ],
                         ),
                         Row(
                           children: [
-                            Text(
-                              'Waktu Ambil: ${order.formattedPickupDate}',
-                              style:
-                                  TextStyles.b1.copyWith(color: Colors.black),
-                            ),
+                            Text('Tanggal Pesan',
+                                style: TextStyles.b1
+                                    .copyWith(color: Colors.black)),
+                            const Spacer(),
+                            Text(order.formattedOrderDate,
+                                style: TextStyles.b1
+                                    .copyWith(color: Colors.black)),
                           ],
                         ),
-                        Text(
-                          'Nama Pemesan: ${order.customerName}',
-                          style: TextStyles.b1.copyWith(color: Colors.black),
-                        ),
-                        const SizedBox(height: 2.0),
-                        RichText(
-                          text: TextSpan(
-                            children: [
-                              TextSpan(
-                                text: 'Total: ',
-                                style:
-                                    TextStyles.b1.copyWith(color: Colors.black),
-                              ),
-                              TextSpan(
-                                text:
-                                    'Rp ${order.totalPrice.toStringAsFixed(0)}',
+                        Row(
+                          children: [
+                            Text('Tanggal Ambil',
                                 style: TextStyles.b1
-                                    .copyWith(color: PrimaryColor.c8),
-                              ),
-                            ],
-                          ),
+                                    .copyWith(color: Colors.black)),
+                            const Spacer(),
+                            Text(order.formattedPickupDate,
+                                style: TextStyles.b1
+                                    .copyWith(color: Colors.black)),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Text('Jam Ambil',
+                                style: TextStyles.b1
+                                    .copyWith(color: Colors.black)),
+                            const Spacer(),
+                            Text(order.formattedPickupTime,
+                                style: TextStyles.b1
+                                    .copyWith(color: Colors.black)),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Text('Nama Pemesan',
+                                style: TextStyles.b1
+                                    .copyWith(color: Colors.black)),
+                            const Spacer(),
+                            Text(order.customerName,
+                                style: TextStyles.b1
+                                    .copyWith(color: Colors.black)),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Text('Total',
+                                style: TextStyles.b1
+                                    .copyWith(color: Colors.black)),
+                            const Spacer(),
+                            Text('Rp ${order.totalPrice.toStringAsFixed(0)}',
+                                style: TextStyles.b1
+                                    .copyWith(color: PrimaryColor.c8)),
+                          ],
                         ),
                       ],
                     ),
@@ -159,7 +173,7 @@ class OrderCard extends StatelessWidget {
                   children: [
                     OutlinedButton(
                       onPressed: onReject,
-                      child: const Text('Tolak'),
+                      child: Text('Tolak'),
                       style: OutlinedButton.styleFrom(
                           foregroundColor: Colors.red,
                           side: const BorderSide(color: Colors.red),
@@ -171,7 +185,7 @@ class OrderCard extends StatelessWidget {
                     const SizedBox(width: 8.0),
                     ElevatedButton(
                       onPressed: onAccept,
-                      child: const Text('Terima'),
+                      child: Text('Terima'),
                       style: ElevatedButton.styleFrom(
                         textStyle: TextStyles.b1,
                         foregroundColor: Colors.white,

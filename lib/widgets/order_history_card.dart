@@ -57,7 +57,7 @@ class OrderHistoryCard extends StatelessWidget {
                           ),
                           const SizedBox(height: 4.0),
                           Text(
-                            order.formattedPickupDate,
+                            order.formattedPickupDateTime,
                             style: TextStyles.b1,
                           ),
                         ],

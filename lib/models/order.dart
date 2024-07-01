@@ -294,6 +294,11 @@ class Order {
   String get formattedOrderDate => DateFormat('dd/MM/yyyy').format(orderDate);
 
   String get formattedPickupDate =>
+      DateFormat('dd/MM/yyyy').format(pickupDate);
+
+  String get formattedPickupTime => DateFormat('HH:mm').format(pickupDate);
+  
+  String get formattedPickupDateTime =>
       DateFormat('dd/MM/yyyy HH:mm').format(pickupDate);
 
   double get subtotal {
