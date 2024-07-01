@@ -8,6 +8,7 @@ class Order {
   final DateTime orderDate;
   final DateTime pickupDate;
   final String customerName;
+  final String customerNumber;
   final double total;
   final String imageUrl;
   String status;
@@ -22,6 +23,7 @@ class Order {
     required this.orderDate,
     required this.pickupDate,
     required this.customerName,
+    required this.customerNumber,
     required this.total,
     required this.imageUrl,
     this.status = 'Pesanan Baru',
@@ -39,6 +41,7 @@ class Order {
         orderDate: DateTime.parse('2024-05-10'),
         pickupDate: DateTime.parse('2024-05-11'),
         customerName: 'Radinka',
+        customerNumber: '628113300039',
         total: 170690,
         imageUrl:
             'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto1.png',
@@ -92,6 +95,7 @@ class Order {
         orderDate: DateTime.parse('2024-05-10'),
         pickupDate: DateTime.parse('2024-05-11'),
         customerName: 'Radinka',
+        customerNumber: '628113300039',
         total: 170690,
         imageUrl:
             'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto2.png',
@@ -145,6 +149,7 @@ class Order {
         orderDate: DateTime.parse('2024-05-10'),
         pickupDate: DateTime.parse('2024-05-11'),
         customerName: 'Radinka',
+        customerNumber: '628113300039',
         total: 170690,
         imageUrl:
             'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto3.png',
@@ -198,6 +203,7 @@ class Order {
         orderDate: DateTime.parse('2024-05-10'),
         pickupDate: DateTime.parse('2024-05-11'),
         customerName: 'Radinka',
+        customerNumber: '628113300039',
         total: 170690,
         imageUrl:
             'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto4.png',
@@ -251,6 +257,7 @@ class Order {
         orderDate: DateTime.parse('2024-05-10'),
         pickupDate: DateTime.parse('2024-05-11'),
         customerName: 'Radinka',
+        customerNumber: '628113300039',
         total: 170690,
         imageUrl:
             'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto5.png',
