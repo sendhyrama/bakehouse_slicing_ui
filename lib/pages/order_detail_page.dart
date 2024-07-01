@@ -35,7 +35,7 @@ class OrderDetailPage extends StatelessWidget {
                 children: [
                   Text(order.customerName, style: TextStyles.h3),
                   Text(
-                    'Rp ${order.total.toStringAsFixed(0)}',
+                    'Rp ${order.totalPrice.toStringAsFixed(0)}',
                     style: TextStyles.h2.copyWith(color: PrimaryColor.c5),
                   ),
                 ],
@@ -132,7 +132,7 @@ class OrderDetailPage extends StatelessWidget {
                                 children: [
                                   Expanded(
                                     child: Text(
-                                      'Amount: ${items[index].amount} ${items[index].unit}',
+                                      'Jumlah: ${items[index].quantity} ${items[index].unit}',
                                       style: TextStyles.b1,
                                     ),
                                   ),

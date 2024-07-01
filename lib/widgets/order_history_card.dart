@@ -67,7 +67,7 @@ class OrderHistoryCard extends StatelessWidget {
                   top: 0,
                   right: 0,
                   child: Text(
-                    'Rp ${order.total.toStringAsFixed(0)}',
+                    'Rp ${order.totalPrice.toStringAsFixed(0)}',
                     style: TextStyles.h3.copyWith(color: PrimaryColor.c8),
                   ),
                 ),

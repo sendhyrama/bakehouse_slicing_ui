@@ -6,7 +6,6 @@ class OrderItem {
   final int quantity;
   final double pricePerUnit;
   final String imageUrl;
-  final int amount;
   final String unit;
 
   OrderItem({
@@ -16,7 +15,6 @@ class OrderItem {
     required this.quantity,
     required this.pricePerUnit,
     required this.imageUrl,
-    required this.amount,
     required this.unit,
   });
 

@@ -29,7 +29,7 @@ class ReviewPage extends StatelessWidget {
                 child: Column(
               children: [
                 Text(order.customerName, style: TextStyles.h3),
-                Text('Rp ${order.total.toStringAsFixed(0)}',
+                Text('Rp ${order.totalPrice.toStringAsFixed(0)}',
                     style: TextStyles.h2.copyWith(color: PrimaryColor.c5)),
               ],
             )),
@@ -138,7 +138,7 @@ class ReviewPage extends StatelessWidget {
                             Text(item.name, style: TextStyles.b1),
                             Text(item.unit),
                             Text(
-                                '${item.amount} x ${item.pricePerUnit.toStringAsFixed(0)}',
+                                '${item.quantity} x ${item.pricePerUnit.toStringAsFixed(0)}',
                                 style: TextStyles.b1),
                             Text(
                                 (item.quantity * item.pricePerUnit)

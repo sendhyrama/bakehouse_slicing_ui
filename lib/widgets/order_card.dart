@@ -75,14 +75,14 @@ class OrderCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   ClipRRect(
                     borderRadius: BorderRadius.circular(12.0),
                     child: Image.network(
                       order.imageUrl,
-                      width: 120,
-                      height: 120,
+                      width: 100,
+                      height: 100,
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -107,12 +107,10 @@ class OrderCard extends StatelessWidget {
                             ],
                           ),
                         ),
-                        const SizedBox(height: 4.0),
                         Text(
                           'Tanggal Pesan: ${order.formattedOrderDate}',
                           style: TextStyles.b1.copyWith(color: Colors.black),
                         ),
-                        const SizedBox(height: 4.0),
                         Row(
                           children: [
                             Text(
@@ -120,15 +118,13 @@ class OrderCard extends StatelessWidget {
                               style:
                                   TextStyles.b1.copyWith(color: Colors.black),
                             ),
-                            const SizedBox(width: 8.0),
                           ],
                         ),
-                        const SizedBox(height: 4.0),
                         Text(
                           'Nama Pemesan: ${order.customerName}',
                           style: TextStyles.b1.copyWith(color: Colors.black),
                         ),
-                        const SizedBox(height: 4.0),
+                        const SizedBox(height: 2.0),
                         RichText(
                           text: TextSpan(
                             children: [
@@ -138,7 +134,8 @@ class OrderCard extends StatelessWidget {
                                     TextStyles.b1.copyWith(color: Colors.black),
                               ),
                               TextSpan(
-                                text: 'Rp ${order.total.toStringAsFixed(0)}',
+                                text:
+                                    'Rp ${order.totalPrice.toStringAsFixed(0)}',
                                 style: TextStyles.b1
                                     .copyWith(color: PrimaryColor.c8),
                               ),
