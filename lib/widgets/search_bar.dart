@@ -2,6 +2,7 @@
 import 'package:bakehouse_slicing_ui/common/colors.dart';
 import 'package:bakehouse_slicing_ui/common/text_styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class SearchBarr extends StatelessWidget {
   final TextEditingController controller;
@@ -45,10 +46,7 @@ class SearchBarr extends StatelessWidget {
                     ),
                   ),
                   IconButton(
-                    icon: const Icon(
-                      Icons.search,
-                      color: PrimaryColor.c8,
-                    ),
+                    icon: SvgPicture.asset('assets/icons/search.svg'),
                     onPressed: () => onSearch(controller.text),
                   ),
                 ],
