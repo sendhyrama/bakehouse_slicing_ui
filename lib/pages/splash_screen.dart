@@ -33,7 +33,7 @@ class SplashScreen extends StatelessWidget {
       nextScreen: const MainScreen(),
       splashIconSize: 800,
       backgroundColor: PrimaryColor.c8,
-      duration: 8000,
+      duration: 5000,
     );
   }
 }
