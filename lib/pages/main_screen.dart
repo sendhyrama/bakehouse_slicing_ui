@@ -6,6 +6,7 @@ import 'order_page.dart';
 import 'home_page.dart';
 import 'finance_page.dart';
 import 'profile_page.dart';
+import 'package:flutter/services.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -32,6 +33,11 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark.copyWith(
+      statusBarColor: Colors.transparent,
+      statusBarIconBrightness:
+          Brightness.light,
+    ));
     return Scaffold(
       body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavBar(
