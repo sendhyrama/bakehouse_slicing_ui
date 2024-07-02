@@ -1,8 +1,6 @@
 import 'dart:io';
-
 import 'package:bakehouse_slicing_ui/common/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../common/text_styles.dart';
 import '../models/order.dart';

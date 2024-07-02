@@ -1,6 +1,5 @@
 // lib/pages/order_detail_page.dart
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart'; // Import the intl package
 import '../models/order.dart';
 import '../models/order_item.dart';
 import '../common/colors.dart';
