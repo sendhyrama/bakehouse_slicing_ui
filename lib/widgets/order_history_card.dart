@@ -1,26 +1,37 @@
 // lib/widgets/order_history_card.dart
 import 'package:flutter/material.dart';
-import '../models/order.dart';
-import '../common/text_styles.dart';
 import '../common/colors.dart';
+import '../models/order.dart';
+import '../pages/order_detail_page.dart';
 import '../pages/review_page.dart';
+import '../common/text_styles.dart';
 
 class OrderHistoryCard extends StatelessWidget {
   final Order order;
 
   OrderHistoryCard({required this.order});
 
+  void _handleCardTap(BuildContext context) {
+    if (order.status == 'Selesai') {
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => ReviewPage(order: order),
+        ),
+      );
+    } else if (order.status == 'Ditolak' || order.status == 'Dibatalkan') {
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => OrderDetailPage(order: order, items: order.items),
+        ),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-        onTap: () {
-          Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (context) => ReviewPage(order: order),
-            ),
-          );
-        },
-        child: Card(
+      onTap: () => _handleCardTap(context),
+      child: Card(
           margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16.0),
@@ -76,6 +87,7 @@ class OrderHistoryCard extends StatelessWidget {
               ],
             ),
           ),
-        ));
+        )
+    );
   }
 }

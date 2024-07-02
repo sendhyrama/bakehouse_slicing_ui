@@ -5,6 +5,7 @@ import '../widgets/filter_bottom_sheet.dart';
 import '../widgets/order_history_card.dart';
 import '../widgets/order_history_tabs.dart';
 import '../widgets/search_bar.dart';
+import '../common/text_styles.dart';
 
 class OrderHistoryPage extends StatefulWidget {
   @override
@@ -22,7 +23,7 @@ class _OrderHistoryPageState extends State<OrderHistoryPage> {
   @override
   void initState() {
     super.initState();
-    orders = Order.getMockOrders(); // Assume getMockOrders is a static method that returns mock data
+    orders = Order.getMockOrders();
     filterOrders();
   }
 
@@ -65,19 +66,17 @@ class _OrderHistoryPageState extends State<OrderHistoryPage> {
   }
 
   void filterOrders() {
-    if (selectedTabIndex == 0) {
-      filteredOrders = orders
-          .where((order) => order.status == 'Selesai' && orderMatchesSearch(order))
-          .toList();
-    } else if (selectedTabIndex == 1) {
-      filteredOrders = orders
-          .where((order) => order.status == 'Dibatalkan' && orderMatchesSearch(order))
-          .toList();
-    } else {
-      filteredOrders = orders
-          .where((order) => order.status == 'Ditolak' && orderMatchesSearch(order))
-          .toList();
-    }
+    DateTime? startDate = startDates[selectedTabIndex];
+    DateTime? endDate = endDates[selectedTabIndex];
+    filteredOrders = orders.where((order) {
+      bool matchesSearch = orderMatchesSearch(order);
+      bool matchesStatus =
+          order.status == getStatusByTabIndex(selectedTabIndex);
+      bool matchesDate =
+          (startDate == null || order.orderDate.isAfter(startDate)) &&
+              (endDate == null || order.orderDate.isBefore(endDate));
+      return matchesSearch && matchesStatus && matchesDate;
+    }).toList();
   }
 
   bool orderMatchesSearch(Order order) {
@@ -86,10 +85,24 @@ class _OrderHistoryPageState extends State<OrderHistoryPage> {
         order.orderNumber.toLowerCase().contains(query);
   }
 
+  String getStatusByTabIndex(int index) {
+    switch (index) {
+      case 0:
+        return 'Selesai';
+      case 1:
+        return 'Dibatalkan';
+      case 2:
+        return 'Ditolak';
+      default:
+        return 'Selesai';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: const Text('Riwayat Pesanan'),
       ),
       body: Column(
         children: [
@@ -103,12 +116,19 @@ class _OrderHistoryPageState extends State<OrderHistoryPage> {
             onFilterPressed: handleFilterPressed,
           ),
           Expanded(
-            child: ListView.builder(
-              itemCount: filteredOrders.length,
-              itemBuilder: (context, index) {
-                return OrderHistoryCard(order: filteredOrders[index]);
-              },
-            ),
+            child: filteredOrders.isEmpty
+                ? const Center(
+                    child: Text(
+                      'Tidak ada pesanan yang ditemukan',
+                      style: TextStyles.b1,
+                    ),
+                  )
+                : ListView.builder(
+                    itemCount: filteredOrders.length,
+                    itemBuilder: (context, index) {
+                      return OrderHistoryCard(order: filteredOrders[index]);
+                    },
+                  ),
           ),
         ],
       ),
