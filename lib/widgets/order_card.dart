@@ -161,9 +161,9 @@ class OrderCard extends StatelessWidget {
               ),
               const SizedBox(height: 16.0),
               const Divider(
-                  color: Colors.grey,
+                  color: PrimaryColor.c8,
                   thickness: 1,
-                  height: 1), // Full horizontal divider
+                  height: 1),
               const SizedBox(height: 8.0),
               if (order.status == 'Pesanan Baru')
                 Row(
