@@ -85,61 +85,86 @@ class OrderDetailPage extends StatelessWidget {
                   ),
                   margin: const EdgeInsets.symmetric(vertical: 8.0),
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(12.0),
                     child: Row(
                       children: [
                         ClipRRect(
                           borderRadius: BorderRadius.circular(12.0),
-                          child: Image.network(
+                          child: Image.asset(
                             items[index].imageUrl,
-                            width: 100,
-                            height: 100,
+                            width: 90,
+                            height: 90,
                             fit: BoxFit.cover,
                           ),
                         ),
-                        const SizedBox(width: 16.0),
+                        const SizedBox(width: 12.0),
                         Expanded(
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
                                 items[index].name,
-                                style: TextStyles.h3.copyWith(fontWeight: FontWeight.bold),
-                              ),
-                              Text(
-                                'Ukuran: ${items[index].size}',
-                                style: TextStyles.b1,
+                                style: TextStyles.h3
+                                    .copyWith(fontWeight: FontWeight.bold),
                               ),
                               Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Expanded(
-                                      child: Text(
-                                        'Varian: ${items[index].variant}',
-                                        style: TextStyles.b1,
-                                      ),
-                                    ),
-                                    Text(
-                                      '${items[index].quantity} x Rp ${items[index].pricePerUnit.toStringAsFixed(0)}',
-                                      style: TextStyles.b1
-                                          .copyWith(color: NeutralColor.c6),
-                                    ),
-                                  ]),
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        const Text(
+                                          'Ukuran',
+                                          style: TextStyles.b2,
+                                        ),
+                                        Text(
+                                          items[index].size,
+                                          style: TextStyles.b2.copyWith(fontWeight: FontWeight.w500),
+                                        ),
+                                      ]),
+                                  const SizedBox(width: 8.0),
+                                  Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        const Text(
+                                          'Varian',
+                                          style: TextStyles.b2,
+                                        ),
+                                        Text(
+                                          items[index].variant,
+                                          style: TextStyles.b2.copyWith(fontWeight: FontWeight.w500),
+                                        ),
+                                      ]),
+                                  const SizedBox(width: 10.0),
+                                  Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        const Text(''),
+                                        Text(
+                                          '${items[index].quantity} x Rp ${items[index].pricePerUnit.toStringAsFixed(0)}',
+                                          style: TextStyles.b1
+                                              .copyWith(color: NeutralColor.c6),
+                                        ),
+                                      ]),
+                                ],
+                              ),
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Expanded(
                                     child: Text(
-                                      'Jumlah: ${items[index].quantity} ${items[index].unit}',
+                                      '${items[index].quantity} ${items[index].unit}',
                                       style: TextStyles.b1,
                                     ),
                                   ),
                                   Text(
                                       'Rp ${items[index].totalPrice.toStringAsFixed(0)}',
-                                      style: TextStyles.h3
-                                          .copyWith(color: PrimaryColor.c7)),
+                                      style: TextStyles.h4
+                                          .copyWith(color: PrimaryColor.c7, fontWeight: FontWeight.w500)),
                                 ],
                               ),
                             ],
@@ -158,9 +183,7 @@ class OrderDetailPage extends StatelessWidget {
               width: double.infinity,
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: Colors.white
-              ),
+                  borderRadius: BorderRadius.circular(20), color: Colors.white),
               child: Text(
                 order.note,
                 style: TextStyles.b1.copyWith(color: NeutralColor.c8),
@@ -170,9 +193,7 @@ class OrderDetailPage extends StatelessWidget {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
-                color: Colors.white
-              ),
+                  borderRadius: BorderRadius.circular(12), color: Colors.white),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

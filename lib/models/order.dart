@@ -37,14 +37,13 @@ class Order {
   static List<Order> getMockOrders() {
     return [
       Order(
-        orderNumber: 'NP24034AKD',
+        orderNumber: 'NP204AKD',
         orderDate: DateTime.parse('2024-05-10'),
         pickupDate: DateTime.parse('2024-05-11 08:00'),
         customerName: 'Radinka',
         customerNumber: '628113300039',
         total: 170690,
-        imageUrl:
-            'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto1.png',
+        imageUrl: 'assets/products/choco-cake.png',
         items: [
           OrderItem(
             name: 'Choco Cake',
@@ -52,8 +51,7 @@ class Order {
             variant: 'Gluten-free',
             quantity: 2,
             pricePerUnit: 35000,
-            imageUrl:
-                'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto1.png',
+            imageUrl: 'assets/products/choco-cake.png',
             unit: 'Pcs',
           ),
           OrderItem(
@@ -62,8 +60,7 @@ class Order {
             variant: 'Gluten-free',
             quantity: 1,
             pricePerUnit: 35000,
-            imageUrl:
-                'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto2.png',
+            imageUrl: 'assets/products/lemon-tartlet.png',
             unit: 'Pcs',
           ),
           OrderItem(
@@ -72,8 +69,7 @@ class Order {
             variant: 'Gluten-free',
             quantity: 8,
             pricePerUnit: 8000,
-            imageUrl:
-                'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto3.png',
+            imageUrl: 'assets/products/vegan-donut.png',
             unit: 'Pcs',
           ),
         ],
@@ -82,20 +78,19 @@ class Order {
         reviewText:
             'Kue coklat nya enak, pas banget rasanya ga bikin eneg temen-temen juga suka 🥰',
         reviewImages: [
-          'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto1.png',
-          'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto1.png',
-          'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto1.png',
+          'assets/products/choco-cake.png',
+          'assets/products/lemon-tartlet.png',
+          'assets/products/vegan-donut.png',
         ],
       ),
       Order(
-        orderNumber: 'NP24031AKA',
+        orderNumber: 'NP201AKA',
         orderDate: DateTime.parse('2024-05-10'),
         pickupDate: DateTime.parse('2024-05-11 08:00'),
         customerName: 'Radinka',
         customerNumber: '628113300039',
         total: 170690,
-        imageUrl:
-            'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto2.png',
+        imageUrl: 'assets/products/lemon-tartlet.png',
         items: [
           OrderItem(
             name: 'Choco Cake',
@@ -103,8 +98,7 @@ class Order {
             variant: 'Gluten-free',
             quantity: 4,
             pricePerUnit: 35000,
-            imageUrl:
-                'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto2.png',
+            imageUrl: 'assets/products/choco-cake.png',
             unit: 'Pcs',
           ),
           OrderItem(
@@ -113,8 +107,7 @@ class Order {
             variant: 'Gluten-free',
             quantity: 2,
             pricePerUnit: 35000,
-            imageUrl:
-                'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto3.png',
+            imageUrl: 'assets/products/lemon-tartlet.png',
             unit: 'Pcs',
           ),
           OrderItem(
@@ -123,8 +116,7 @@ class Order {
             variant: 'Gluten-free',
             quantity: 3,
             pricePerUnit: 8000,
-            imageUrl:
-                'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto4.png',
+            imageUrl: 'assets/products/vegan-donut.png',
             unit: 'Pcs',
           ),
         ],
@@ -132,20 +124,19 @@ class Order {
         rating: 5,
         reviewText: 'Mantap!',
         reviewImages: [
-          'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto2.png',
-          'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto2.png',
-          'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto2.png',
+          'assets/products/choco-cake.png',
+          'assets/products/lemon-tartlet.png',
+          'assets/products/vegan-donut.png',
         ],
       ),
       Order(
-        orderNumber: 'NP24032AKB',
+        orderNumber: 'NP202AKB',
         orderDate: DateTime.parse('2024-05-10'),
         pickupDate: DateTime.parse('2024-05-11 08:00'),
         customerName: 'Radinka',
         customerNumber: '628113300039',
         total: 170690,
-        imageUrl:
-            'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto3.png',
+        imageUrl: 'assets/products/vegan-donut.png',
         items: [
           OrderItem(
             name: 'Choco Cake',
@@ -153,8 +144,7 @@ class Order {
             variant: 'Gluten-free',
             quantity: 1,
             pricePerUnit: 35000,
-            imageUrl:
-                'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto3.png',
+            imageUrl: 'assets/products/choco-cake.png',
             unit: 'Pcs',
           ),
           OrderItem(
@@ -163,8 +153,7 @@ class Order {
             variant: 'Gluten-free',
             quantity: 1,
             pricePerUnit: 35000,
-            imageUrl:
-                'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto4.png',
+            imageUrl: 'assets/products/lemon-tartlet.png',
             unit: 'Pcs',
           ),
           OrderItem(
@@ -173,8 +162,7 @@ class Order {
             variant: 'Gluten-free',
             quantity: 1,
             pricePerUnit: 8000,
-            imageUrl:
-                'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto5.png',
+            imageUrl: 'assets/products/vegan-donut.png',
             unit: 'Pcs',
           ),
         ],
@@ -182,29 +170,27 @@ class Order {
         rating: 5,
         reviewText: 'Enak pake bangett!',
         reviewImages: [
-          'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto3.png',
-          'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto3.png',
-          'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto3.png',
+          'assets/products/choco-cake.png',
+          'assets/products/lemon-tartlet.png',
+          'assets/products/vegan-donut.png',
         ],
       ),
       Order(
-        orderNumber: 'NP24033AKC',
+        orderNumber: 'NP203AKC',
         orderDate: DateTime.parse('2024-05-10'),
         pickupDate: DateTime.parse('2024-05-12 13:00'),
         customerName: 'Sendhy',
         customerNumber: '6282150103051',
         total: 170690,
-        imageUrl:
-            'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto4.png',
+        imageUrl: 'assets/products/choco-soes.png',
         items: [
           OrderItem(
-            name: 'Choco Cake',
+            name: 'Choco Soes',
             size: 'Potongan',
             variant: 'Gluten-free',
             quantity: 2,
             pricePerUnit: 35000,
-            imageUrl:
-                'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto4.png',
+            imageUrl: 'assets/products/choco-soes.png',
             unit: 'Pcs',
           ),
           OrderItem(
@@ -213,8 +199,7 @@ class Order {
             variant: 'Gluten-free',
             quantity: 2,
             pricePerUnit: 35000,
-            imageUrl:
-                'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto5.png',
+            imageUrl: 'assets/products/lemon-tartlet.png',
             unit: 'Pcs',
           ),
           OrderItem(
@@ -223,8 +208,7 @@ class Order {
             variant: 'Gluten-free',
             quantity: 4,
             pricePerUnit: 8000,
-            imageUrl:
-                'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto1.png',
+            imageUrl: 'assets/products/vegan-donut.png',
             unit: 'Pcs',
           ),
         ],
@@ -232,29 +216,27 @@ class Order {
         rating: 5,
         reviewText: 'Enak teksturnya lembut, worth to try!',
         reviewImages: [
-          'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto4.png',
-          'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto4.png',
-          'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto4.png',
+          'assets/products/choco-soes.png',
+          'assets/products/lemon-tartlet.png',
+          'assets/products/vegan-donut.png',
         ],
       ),
       Order(
-        orderNumber: 'NP24030AKM',
+        orderNumber: 'NP200AKM',
         orderDate: DateTime.parse('2024-05-10'),
         pickupDate: DateTime.parse('2024-05-12 13:00'),
         customerName: 'Sendhy',
         customerNumber: '6282150103051',
         total: 170690,
-        imageUrl:
-            'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto5.png',
+        imageUrl: 'assets/products/mille-crepes.png',
         items: [
           OrderItem(
-            name: 'Choco Cake',
+            name: 'Mille Crepes',
             size: 'Potongan',
             variant: 'Gluten-free',
             quantity: 4,
             pricePerUnit: 35000,
-            imageUrl:
-                'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto5.png',
+            imageUrl: 'assets/products/mille-crepes.png',
             unit: 'Pcs',
           ),
           OrderItem(
@@ -263,8 +245,7 @@ class Order {
             variant: 'Gluten-free',
             quantity: 3,
             pricePerUnit: 35000,
-            imageUrl:
-                'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto1.png',
+            imageUrl: 'assets/products/lemon-tartlet.png',
             unit: 'Pcs',
           ),
           OrderItem(
@@ -273,8 +254,7 @@ class Order {
             variant: 'Gluten-free',
             quantity: 3,
             pricePerUnit: 8000,
-            imageUrl:
-                'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto2.png',
+            imageUrl: 'assets/products/vegan-donut.png',
             unit: 'Pcs',
           ),
         ],
@@ -282,22 +262,20 @@ class Order {
         rating: 5,
         reviewText: 'Pertama kali nyoba kue seenak inii',
         reviewImages: [
-          'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto5.png',
-          'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto5.png',
-          'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto5.png',
+          'assets/products/mille-crepes.png',
+          'assets/products/lemon-tartlet.png',
+          'assets/products/vegan-donut.png',
         ],
       ),
-      // Other mock orders...
     ];
   }
 
   String get formattedOrderDate => DateFormat('dd/MM/yyyy').format(orderDate);
 
-  String get formattedPickupDate =>
-      DateFormat('dd/MM/yyyy').format(pickupDate);
+  String get formattedPickupDate => DateFormat('dd/MM/yyyy').format(pickupDate);
 
   String get formattedPickupTime => DateFormat('HH:mm').format(pickupDate);
-  
+
   String get formattedPickupDateTime =>
       DateFormat('dd/MM/yyyy HH:mm').format(pickupDate);
 

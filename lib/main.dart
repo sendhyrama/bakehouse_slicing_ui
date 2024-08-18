@@ -1,8 +1,11 @@
 import 'package:bakehouse_slicing_ui/pages/splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/date_symbol_data_local.dart';
 import 'pages/order_history_page.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await initializeDateFormatting('id_ID', null);
   runApp(const MyApp());
 }
 

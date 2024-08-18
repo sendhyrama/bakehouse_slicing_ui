@@ -99,7 +99,7 @@ class ReviewPage extends StatelessWidget {
                           padding: const EdgeInsets.all(4.0),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(8.0),
-                            child: Image.network(
+                            child: Image.asset(
                               order.imageUrl,
                               width: 80,
                               height: 80,

@@ -41,7 +41,7 @@ class OrderCard extends StatelessWidget {
       case 'Pesanan Baru':
         return 'Siap Produksi';
       case 'Diproduksi':
-        return 'Siap Dikemas';
+        return 'Dikemas';
       case 'Dikemas':
         return 'Siap Diambil';
       default:
@@ -62,175 +62,164 @@ class OrderCard extends StatelessWidget {
       },
       child: Card(
         margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+        color: Colors.white,
+        elevation: 2.0,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12.0),
-          side: const BorderSide(color: PrimaryColor.c8),
         ),
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        _buildInfoRow(
+                            'No. Pesanan', order.orderNumber, Colors.red),
+                        _buildInfoRow('Tgl. Pesan', order.formattedOrderDate),
+                        _buildInfoRow('Tgl. Ambil', order.formattedPickupDate),
+                        _buildInfoRow('Waktu Ambil', order.formattedPickupTime),
+                        _buildInfoRow('Pemesan', order.customerName),
+                        _buildInfoRow(
+                            'Total',
+                            'Rp ${order.totalPrice.toStringAsFixed(0)}',
+                            PrimaryColor.c8),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(width: 12.0),
                   ClipRRect(
                     borderRadius: BorderRadius.circular(12.0),
-                    child: Image.network(
+                    child: Image.asset(
                       order.imageUrl,
                       width: 128,
                       height: 128,
                       fit: BoxFit.cover,
                     ),
                   ),
-                  const SizedBox(width: 12.0),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
+                ],
+              ),
+            ),
+            const Divider(height: 1), // Divider added back
+            Container(
+              padding: const EdgeInsets.all(16.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Status',
+                          style:
+                              TextStyles.b1.copyWith(color: NeutralColor.c8)),
+                      Text(order.status,
+                          style: TextStyles.b1.copyWith(
+                              color: PrimaryColor.c8,
+                              fontWeight: FontWeight.w500)),
+                    ],
+                  ),
+                  const SizedBox(height: 12),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      if (order.status == 'Pesanan Baru')
                         Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            Text('No. Pesanan',
-                                style: TextStyles.b1
-                                    .copyWith(color: Colors.black)),
-                            const Spacer(),
-                            Text(order.orderNumber,
-                                style:
-                                    TextStyles.b1.copyWith(color: Colors.red)),
+                            OutlinedButton(
+                              onPressed: onReject,
+                              child: Text('Tolak'),
+                              style: OutlinedButton.styleFrom(
+                                foregroundColor: DangerColor.c5,
+                                side: const BorderSide(color: DangerColor.c5),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                textStyle: TextStyles.b1,
+                              ),
+                            ),
+                            const SizedBox(width: 8.0),
+                            ElevatedButton(
+                              onPressed: onAccept,
+                              child: Text('Terima'),
+                              style: ElevatedButton.styleFrom(
+                                textStyle: TextStyles.b1,
+                                foregroundColor: Colors.white,
+                                backgroundColor: SuccessColor.c5,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                              ),
+                            ),
+                          ],
+                        )
+                      else
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            ElevatedButton.icon(
+                              onPressed: () {
+                                _launchWhatsApp(order.customerNumber);
+                              },
+                              icon: Image.asset('assets/icons/whatsapp.png'),
+                              label: const Text('Chat', style: TextStyles.b1),
+                              style: ElevatedButton.styleFrom(
+                                foregroundColor: Colors.white,
+                                backgroundColor: SuccessColor.c5,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(width: 8.0),
+                            OutlinedButton(
+                              onPressed: onUpdateStatus,
+                              child: Text(getNextStatusText(order.status)),
+                              style: OutlinedButton.styleFrom(
+                                foregroundColor: PrimaryColor.c8,
+                                side: const BorderSide(color: PrimaryColor.c8),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                textStyle: TextStyles.b1,
+                              ),
+                            ),
                           ],
                         ),
-                        Row(
-                          children: [
-                            Text('Tanggal Pesan',
-                                style: TextStyles.b1
-                                    .copyWith(color: Colors.black)),
-                            const Spacer(),
-                            Text(order.formattedOrderDate,
-                                style: TextStyles.b1
-                                    .copyWith(color: Colors.black)),
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            Text('Tanggal Ambil',
-                                style: TextStyles.b1
-                                    .copyWith(color: Colors.black)),
-                            const Spacer(),
-                            Text(order.formattedPickupDate,
-                                style: TextStyles.b1
-                                    .copyWith(color: Colors.black)),
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            Text('Jam Ambil',
-                                style: TextStyles.b1
-                                    .copyWith(color: Colors.black)),
-                            const Spacer(),
-                            Text(order.formattedPickupTime,
-                                style: TextStyles.b1
-                                    .copyWith(color: Colors.black)),
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            Text('Nama Pemesan',
-                                style: TextStyles.b1
-                                    .copyWith(color: Colors.black)),
-                            const Spacer(),
-                            Text(order.customerName,
-                                style: TextStyles.b1
-                                    .copyWith(color: Colors.black)),
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            Text('Total',
-                                style: TextStyles.b1
-                                    .copyWith(color: Colors.black)),
-                            const Spacer(),
-                            Text('Rp ${order.totalPrice.toStringAsFixed(0)}',
-                                style: TextStyles.b1
-                                    .copyWith(color: PrimaryColor.c8)),
-                          ],
-                        ),
-                      ],
-                    ),
+                    ],
                   ),
                 ],
               ),
-              const SizedBox(height: 16.0),
-              const Divider(
-                  color: PrimaryColor.c8,
-                  thickness: 1,
-                  height: 1),
-              const SizedBox(height: 8.0),
-              if (order.status == 'Pesanan Baru')
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    OutlinedButton(
-                      onPressed: onReject,
-                      child: Text('Tolak'),
-                      style: OutlinedButton.styleFrom(
-                          foregroundColor: DangerColor.c5,
-                          side: const BorderSide(color: DangerColor.c5),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          textStyle: TextStyles.b1),
-                    ),
-                    const SizedBox(width: 8.0),
-                    ElevatedButton(
-                      onPressed: onAccept,
-                      child: Text('Terima'),
-                      style: ElevatedButton.styleFrom(
-                        textStyle: TextStyles.b1,
-                        foregroundColor: Colors.white,
-                        backgroundColor: SuccessColor.c5,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                      ),
-                    ),
-                  ],
-                )
-              else
-                Row(
-                  mainAxisAlignment:
-                      MainAxisAlignment.end, // Align buttons to the right
-                  children: [
-                    ElevatedButton.icon(
-                      onPressed: () {
-                        _launchWhatsApp(order.customerNumber);
-                      },
-                      icon: Image.asset('assets/icons/whatsapp.png'),
-                      label: const Text('Chat Pembeli', style: TextStyles.b1),
-                      style: ElevatedButton.styleFrom(
-                        foregroundColor: Colors.white,
-                        backgroundColor: SuccessColor.c5,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(width: 8.0),
-                    OutlinedButton(
-                      onPressed: onUpdateStatus,
-                      child: Text(getNextStatusText(order.status)),
-                      style: OutlinedButton.styleFrom(
-                          foregroundColor: PrimaryColor.c8,
-                          side: const BorderSide(color: PrimaryColor.c8),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          textStyle: TextStyles.b1),
-                    ),
-                  ],
-                ),
-            ],
-          ),
+            ),
+          ],
         ),
+      ),
+    );
+  }
+
+  Widget _buildInfoRow(String label, String value, [Color? valueColor]) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 0),
+      child: Row(
+        children: [
+          SizedBox(
+            width: 100,
+            child: Text(
+              label,
+              style: TextStyles.b1,
+            ),
+          ),
+          Expanded(
+            child: Text(
+              value,
+              style: TextStyles.b1.copyWith(color: valueColor ?? Colors.black),
+            ),
+          ),
+        ],
       ),
     );
   }

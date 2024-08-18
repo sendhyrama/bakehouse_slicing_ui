@@ -23,7 +23,7 @@ class OrderStatusTabs extends StatelessWidget {
           _buildTabItem(context, 0, 'Pesanan Baru'),
           _buildTabItem(context, 1, 'Diproduksi'),
           _buildTabItem(context, 2, 'Dikemas'),
-          _buildTabItem(context, 3, 'Siap diambil'),
+          _buildTabItem(context, 3, 'Siap Diambil'),
         ],
       ),
     );

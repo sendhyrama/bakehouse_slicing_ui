@@ -21,7 +21,8 @@ class OrderHistoryCard extends StatelessWidget {
     } else if (order.status == 'Ditolak' || order.status == 'Dibatalkan') {
       Navigator.of(context).push(
         MaterialPageRoute(
-          builder: (context) => OrderDetailPage(order: order, items: order.items),
+          builder: (context) =>
+              OrderDetailPage(order: order, items: order.items),
         ),
       );
     }
@@ -30,8 +31,8 @@ class OrderHistoryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => _handleCardTap(context),
-      child: Card(
+        onTap: () => _handleCardTap(context),
+        child: Card(
           margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
           color: Colors.white,
           shape: RoundedRectangleBorder(
@@ -45,7 +46,7 @@ class OrderHistoryCard extends StatelessWidget {
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(8.0),
-                      child: Image.network(
+                      child: Image.asset(
                         order.imageUrl,
                         width: 80,
                         height: 80,
@@ -61,14 +62,18 @@ class OrderHistoryCard extends StatelessWidget {
                             order.orderNumber,
                             style: TextStyles.b1.copyWith(color: Colors.red),
                           ),
-                          const SizedBox(height: 4.0),
+                          // const SizedBox(height: 4.0),
                           Text(
                             order.customerName,
                             style: TextStyles.b1,
                           ),
-                          const SizedBox(height: 4.0),
+                          // const SizedBox(height: 4.0),
                           Text(
-                            order.formattedPickupDateTime,
+                            'Sabtu, ${order.formattedPickupDate}',
+                            style: TextStyles.b1,
+                          ),
+                          Text(
+                            order.formattedPickupTime,
                             style: TextStyles.b1,
                           ),
                         ],
@@ -87,7 +92,6 @@ class OrderHistoryCard extends StatelessWidget {
               ],
             ),
           ),
-        )
-    );
+        ));
   }
 }

@@ -13,7 +13,7 @@ class OrderStatusButton extends StatelessWidget {
       onPressed: onPressed,
       child: Text(label),
       style: ElevatedButton.styleFrom(
-        backgroundColor: label == 'Chat Pembeli' ? Colors.green : Colors.blue,
+        backgroundColor: label == 'Chat' ? Colors.green : Colors.blue,
       ),
     );
   }

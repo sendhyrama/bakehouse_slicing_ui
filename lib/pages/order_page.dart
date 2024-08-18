@@ -130,7 +130,7 @@ class _OrdersPageState extends State<OrderPage> {
         case 2:
           return 'Dikemas';
         case 3:
-          return 'Siap diambil';
+          return 'Siap Diambil';
         default:
           return 'Pesanan Baru';
       }
@@ -155,7 +155,7 @@ class _OrdersPageState extends State<OrderPage> {
       case 'Diproduksi':
         return 'Dikemas';
       case 'Dikemas':
-        return 'Siap diambil';
+        return 'Siap Diambil';
       default:
         return 'Pesanan Baru';
     }
@@ -304,7 +304,7 @@ class _OrdersPageState extends State<OrderPage> {
                           // items:context,index, // Pass the appropriate order items
                           onUpdateStatus: () {
                             if (filteredOrders[index].status ==
-                                'Siap diambil') {
+                                'Siap Diambil') {
                               handleCompleteOrder(filteredOrders[index]);
                             } else {
                               handleShowUpdateDialog(filteredOrders[index]);
