@@ -16,7 +16,7 @@ class OrderDetailPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Lihat Order',
+          'Lihat Pesanan',
           style: TextStyles.h3,
         ),
         leading: IconButton(
@@ -35,7 +35,7 @@ class OrderDetailPage extends StatelessWidget {
                   Text(order.customerName, style: TextStyles.h3),
                   Text(
                     'Rp ${order.totalPrice.toStringAsFixed(0)}',
-                    style: TextStyles.h2.copyWith(color: PrimaryColor.c5),
+                    style: TextStyles.h2.copyWith(color: PrimaryColor.c7),
                   ),
                 ],
               ),
@@ -48,7 +48,7 @@ class OrderDetailPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text('No. Pesanan',
-                        style: TextStyles.b1.copyWith(color: Colors.grey)),
+                        style: TextStyles.b1.copyWith(color: NeutralColor.c6)),
                     Text(order.orderNumber,
                         style: TextStyles.b1.copyWith(color: Colors.red)),
                   ],
@@ -57,7 +57,7 @@ class OrderDetailPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text('Tanggal Pesan',
-                        style: TextStyles.b1.copyWith(color: Colors.grey)),
+                        style: TextStyles.b1.copyWith(color: NeutralColor.c6)),
                     Text(order.formattedOrderDate, style: TextStyles.b1),
                   ],
                 ),
@@ -65,7 +65,7 @@ class OrderDetailPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text('Waktu Ambil',
-                        style: TextStyles.b1.copyWith(color: Colors.grey)),
+                        style: TextStyles.b1.copyWith(color: NeutralColor.c6)),
                     Text(order.formattedPickupDateTime, style: TextStyles.b1),
                   ],
                 ),
@@ -74,13 +74,14 @@ class OrderDetailPage extends StatelessWidget {
             const SizedBox(height: 16.0),
             ListView.builder(
               shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               itemCount: items.length,
               itemBuilder: (context, index) {
                 return Card(
+                  elevation: 1,
+                  color: Colors.white,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12.0),
-                    side: const BorderSide(color: PrimaryColor.c8, width: 1),
                   ),
                   margin: const EdgeInsets.symmetric(vertical: 8.0),
                   child: Padding(
@@ -103,10 +104,10 @@ class OrderDetailPage extends StatelessWidget {
                             children: [
                               Text(
                                 items[index].name,
-                                style: TextStyles.h3,
+                                style: TextStyles.h3.copyWith(fontWeight: FontWeight.bold),
                               ),
                               Text(
-                                'Size: ${items[index].size}',
+                                'Ukuran: ${items[index].size}',
                                 style: TextStyles.b1,
                               ),
                               Row(
@@ -122,7 +123,7 @@ class OrderDetailPage extends StatelessWidget {
                                     Text(
                                       '${items[index].quantity} x Rp ${items[index].pricePerUnit.toStringAsFixed(0)}',
                                       style: TextStyles.b1
-                                          .copyWith(color: PrimaryColor.c6),
+                                          .copyWith(color: NeutralColor.c6),
                                     ),
                                   ]),
                               Row(
@@ -137,8 +138,8 @@ class OrderDetailPage extends StatelessWidget {
                                   ),
                                   Text(
                                       'Rp ${items[index].totalPrice.toStringAsFixed(0)}',
-                                      style: TextStyles.b1
-                                          .copyWith(color: PrimaryColor.c6)),
+                                      style: TextStyles.h3
+                                          .copyWith(color: PrimaryColor.c7)),
                                 ],
                               ),
                             ],
@@ -157,20 +158,20 @@ class OrderDetailPage extends StatelessWidget {
               width: double.infinity,
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               decoration: BoxDecoration(
-                border: Border.all(color: PrimaryColor.c8),
-                borderRadius: BorderRadius.circular(12),
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.white
               ),
               child: Text(
                 order.note,
-                style: TextStyles.b1.copyWith(color: PrimaryColor.c8),
+                style: TextStyles.b1.copyWith(color: NeutralColor.c8),
               ),
             ),
             const SizedBox(height: 16.0),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               decoration: BoxDecoration(
-                border: Border.all(color: PrimaryColor.c8),
                 borderRadius: BorderRadius.circular(12),
+                color: Colors.white
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

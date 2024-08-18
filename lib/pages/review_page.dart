@@ -29,7 +29,7 @@ class ReviewPage extends StatelessWidget {
               children: [
                 Text(order.customerName, style: TextStyles.h3),
                 Text('Rp ${order.totalPrice.toStringAsFixed(0)}',
-                    style: TextStyles.h2.copyWith(color: PrimaryColor.c5)),
+                    style: TextStyles.h2.copyWith(color: PrimaryColor.c7)),
               ],
             )),
             const SizedBox(height: 16.0),
@@ -40,7 +40,7 @@ class ReviewPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text('No. Pesanan',
-                        style: TextStyles.b1.copyWith(color: Colors.grey)),
+                        style: TextStyles.b1.copyWith(color: NeutralColor.c6)),
                     Text(order.orderNumber,
                         style: TextStyles.b1.copyWith(color: Colors.red)),
                   ],
@@ -49,47 +49,45 @@ class ReviewPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text('Tanggal Pesan',
-                        style: TextStyles.b1.copyWith(color: Colors.grey)),
-                    Text(order.formattedOrderDate,
-                        style: TextStyles.b1),
+                        style: TextStyles.b1.copyWith(color: NeutralColor.c6)),
+                    Text(order.formattedOrderDate, style: TextStyles.b1),
                   ],
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text('Waktu Ambil',
-                        style: TextStyles.b1.copyWith(color: Colors.grey)),
-                    Text(order.formattedPickupDateTime,
-                        style: TextStyles.b1),
+                        style: TextStyles.b1.copyWith(color: NeutralColor.c6)),
+                    Text(order.formattedPickupDateTime, style: TextStyles.b1),
                   ],
                 ),
               ],
             ),
             const SizedBox(height: 16.0),
-            const Text('Penilaian', style: TextStyles.h4),
-            const SizedBox(height: 8.0),
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(12.0),
-              decoration: BoxDecoration(
-                border: Border.all(color: PrimaryColor.c5),
-                borderRadius: BorderRadius.circular(18.0),
-              ),
-              child: order.rating != null
-                  ? Row(
-                      children: List.generate(
-                        5,
-                        (index) => Icon(
-                          index < order.rating!
-                              ? Icons.star
-                              : Icons.star_border,
-                          color: WarningColor.c5,
+            Center(
+                child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text('Penilaian',
+                    style: TextStyles.h4.copyWith(fontWeight: FontWeight.bold)),
+                const SizedBox(height: 4.0),
+                order.rating != null
+                    ? Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: List.generate(
+                          5,
+                          (index) => Icon(
+                            index < order.rating!
+                                ? Icons.star
+                                : Icons.star_border,
+                            color: WarningColor.c5,
+                          ),
                         ),
-                      ),
-                    )
-                  : Text('Belum ada ulasan',
-                      style: TextStyles.b1.copyWith(color: Colors.grey)),
-            ),
+                      )
+                    : Text('Belum ada ulasan',
+                        style: TextStyles.b1.copyWith(color: Colors.grey)),
+              ],
+            )),
             const SizedBox(height: 16.0),
             const Text('Ulasan', style: TextStyles.h4),
             const SizedBox(height: 8.0),
@@ -116,15 +114,16 @@ class ReviewPage extends StatelessWidget {
               width: double.infinity,
               padding: const EdgeInsets.all(12.0),
               decoration: BoxDecoration(
-                border: Border.all(color: PrimaryColor.c5),
                 borderRadius: BorderRadius.circular(18.0),
+                color: Colors.white,
               ),
               child: Text(order.reviewText, style: TextStyles.b1),
             ),
             const SizedBox(height: 16.0),
             const Divider(),
             const SizedBox(height: 8.0),
-            const Text('Produk', style: TextStyles.h4),
+            Text('Produk',
+                style: TextStyles.h4.copyWith(fontWeight: FontWeight.bold)),
             const SizedBox(height: 8.0),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,

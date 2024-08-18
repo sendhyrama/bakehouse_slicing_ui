@@ -15,12 +15,12 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  int _selectedIndex = 1; // Adjust this index if needed
+  int _selectedIndex = 2;
 
   final List<Widget> _pages = [
+    const HomePage(),
     const InventoryPage(),
     const OrderPage(),
-    const HomePage(),
     const FinancePage(),
     const ProfilePage(),
   ];

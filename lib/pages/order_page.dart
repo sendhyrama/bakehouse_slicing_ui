@@ -174,8 +174,8 @@ class _OrdersPageState extends State<OrderPage> {
       context: context,
       builder: (BuildContext context) {
         return CustomDialog(
-          title: 'Konfirmasi Terima Pesanan',
-          content: 'Apakah Anda yakin?',
+          title: 'Terima Pesanan',
+          content: 'Apakah Anda Yakin?',
           onConfirm: () {
             setState(() {
               order.status = 'Diproduksi';
@@ -194,8 +194,8 @@ class _OrdersPageState extends State<OrderPage> {
       context: context,
       builder: (BuildContext context) {
         return CustomDialog(
-          title: 'Konfirmasi Tolak Pesanan',
-          content: 'Apakah Anda yakin?',
+          title: 'Tolak Pesanan',
+          content: 'Apakah Anda Yakin?',
           onConfirm: () {
             setState(() {
               order.status = 'Ditolak';
@@ -284,11 +284,12 @@ class _OrdersPageState extends State<OrderPage> {
           Expanded(
             child: filteredOrders.isEmpty
                 ? EmptyState(
-                    message: 'Tidak ada pesanan yang ditemukan',
+                    title: 'Hasil pencarian tidak ditemukan',
+                    message: 'Tidak ditemukan hasil untuk pencarian Anda. Coba ganti dengan kata kunci lain.',
                     icon: SvgPicture.asset(
                       'assets/icons/not-found.svg',
-                      width: 120,
-                      height: 120,
+                      width: 200,
+                      height: 200,
                     ))
                 : ListView.builder(
                     padding: EdgeInsets.zero,

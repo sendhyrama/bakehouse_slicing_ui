@@ -23,16 +23,16 @@ class BottomNavBar extends StatelessWidget {
         type: BottomNavigationBarType.fixed,
         items: [
           BottomNavigationBarItem(
-            icon: _buildSvgIcon("assets/icons/inventaris.svg", 0),
+            icon: _buildSvgIcon("assets/icons/beranda.svg", 0),
+            label: 'Beranda',
+          ),
+          BottomNavigationBarItem(
+            icon: _buildSvgIcon("assets/icons/inventaris.svg", 1),
             label: 'Inventaris',
           ),
           BottomNavigationBarItem(
-            icon: _buildSvgIcon("assets/icons/pesanan.svg", 1),
+            icon: _buildSvgIcon("assets/icons/pesanan.svg", 2),
             label: 'Pesanan',
-          ),
-          BottomNavigationBarItem(
-            icon: _buildSvgIcon("assets/icons/beranda.svg", 2),
-            label: 'Beranda',
           ),
           BottomNavigationBarItem(
             icon: _buildSvgIcon("assets/icons/keuangan.svg", 3),
@@ -43,10 +43,10 @@ class BottomNavBar extends StatelessWidget {
             label: 'Profil',
           ),
         ],
-        selectedItemColor: SecondaryColor.c8,
+        selectedItemColor: NeutralColor.c9,
         unselectedItemColor: Colors.grey,
         showUnselectedLabels: true,
-        selectedLabelStyle: TextStyles.b2.copyWith(color: SecondaryColor.c8),
+        selectedLabelStyle: TextStyles.b2.copyWith(color: NeutralColor.c9),
         unselectedLabelStyle: TextStyles.b2.copyWith(color: Colors.grey),
       ),
     );

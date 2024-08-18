@@ -21,7 +21,7 @@ class OrderPageHeader extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(16.0),
       decoration: const BoxDecoration(
-        color: PrimaryColor.c5, // Adjust the color as needed
+        color: PrimaryColor.c8,
         borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)),
       ),
       child: Column(
@@ -45,9 +45,9 @@ class OrderPageHeader extends StatelessWidget {
                 onPressed: () => onStatusPressed(),
                 style: ElevatedButton.styleFrom(
                   foregroundColor:
-                      isStatusSelected ? Colors.white : PrimaryColor.c8,
+                      isStatusSelected ? NeutralColor.c9 : NeutralColor.c7,
                   backgroundColor:
-                      isStatusSelected ? PrimaryColor.c8 : Colors.white,
+                      isStatusSelected ? Colors.white : PrimaryColor.c3,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),
@@ -62,9 +62,9 @@ class OrderPageHeader extends StatelessWidget {
                 onPressed: () => onHistoryPressed(),
                 style: ElevatedButton.styleFrom(
                   foregroundColor:
-                      isStatusSelected ? PrimaryColor.c8 : Colors.white,
+                      isStatusSelected ? NeutralColor.c7 : NeutralColor.c9,
                   backgroundColor:
-                      isStatusSelected ? Colors.white : PrimaryColor.c8,
+                      isStatusSelected ? PrimaryColor.c3 : Colors.white,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),

@@ -79,10 +79,7 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
                         padding: const EdgeInsets.symmetric(
                             vertical: 12.0, horizontal: 16.0),
                         decoration: BoxDecoration(
-                          border: Border.all(
-                              color: startDate == null
-                                  ? Colors.grey
-                                  : PrimaryColor.c8),
+                          color: Colors.grey.shade100,
                           borderRadius: BorderRadius.circular(20.0),
                         ),
                         child: Row(
@@ -100,7 +97,7 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
                             Icon(Icons.calendar_today,
                                 color: startDate == null
                                     ? Colors.grey
-                                    : PrimaryColor.c8),
+                                    : SecondaryColor.c8),
                           ],
                         ),
                       ),
@@ -134,10 +131,7 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
                         padding: const EdgeInsets.symmetric(
                             vertical: 12.0, horizontal: 16.0),
                         decoration: BoxDecoration(
-                          border: Border.all(
-                              color: endDate == null
-                                  ? Colors.grey
-                                  : PrimaryColor.c8),
+                          color: Colors.grey.shade100,
                           borderRadius: BorderRadius.circular(20.0),
                         ),
                         child: Row(
@@ -150,12 +144,12 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
                               style: TextStyle(
                                   color: endDate == null
                                       ? Colors.grey
-                                      : PrimaryColor.c8),
+                                      : Colors.black),
                             ),
                             Icon(Icons.calendar_today,
                                 color: endDate == null
                                     ? Colors.grey
-                                    : PrimaryColor.c8),
+                                    : SecondaryColor.c8),
                           ],
                         ),
                       ),
@@ -173,8 +167,8 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
-                child: Text('Kembali',
-                    style: TextStyles.b1.copyWith(color: PrimaryColor.c8)),
+                child: Text('Atur Ulang',
+                    style: TextStyles.b1.copyWith(color: NeutralColor.c6)),
               ),
               const SizedBox(
                 width: 16.0,
@@ -189,7 +183,7 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
                 child: const Text('Simpan', style: TextStyles.b1),
                 style: ElevatedButton.styleFrom(
                   foregroundColor: Colors.white,
-                  backgroundColor: Colors.green,
+                  backgroundColor: SuccessColor.c5,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),

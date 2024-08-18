@@ -33,9 +33,9 @@ class OrderHistoryCard extends StatelessWidget {
       onTap: () => _handleCardTap(context),
       child: Card(
           margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+          color: Colors.white,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16.0),
-            side: const BorderSide(color: PrimaryColor.c8),
           ),
           child: Padding(
             padding: const EdgeInsets.all(16.0),

@@ -173,8 +173,8 @@ class OrderCard extends StatelessWidget {
                       onPressed: onReject,
                       child: Text('Tolak'),
                       style: OutlinedButton.styleFrom(
-                          foregroundColor: Colors.red,
-                          side: const BorderSide(color: Colors.red),
+                          foregroundColor: DangerColor.c5,
+                          side: const BorderSide(color: DangerColor.c5),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20),
                           ),
@@ -187,7 +187,7 @@ class OrderCard extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                         textStyle: TextStyles.b1,
                         foregroundColor: Colors.white,
-                        backgroundColor: Colors.green,
+                        backgroundColor: SuccessColor.c5,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20),
                         ),
@@ -208,7 +208,7 @@ class OrderCard extends StatelessWidget {
                       label: const Text('Chat Pembeli', style: TextStyles.b1),
                       style: ElevatedButton.styleFrom(
                         foregroundColor: Colors.white,
-                        backgroundColor: Colors.green,
+                        backgroundColor: SuccessColor.c5,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20),
                         ),

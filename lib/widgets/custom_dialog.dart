@@ -31,12 +31,12 @@ class CustomDialog extends StatelessWidget {
           children: [
             Text(
               title,
-              style: TextStyles.h3.copyWith(color: PrimaryColor.c5),
+              style: TextStyles.h3.copyWith(color: PrimaryColor.c7, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 8.0),
             Text(
               content,
-              style: TextStyles.b1.copyWith(color: Colors.black),
+              style: TextStyles.b1.copyWith(color: NeutralColor.c8),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 16.0),
@@ -63,7 +63,7 @@ class CustomDialog extends StatelessWidget {
                   child: Text(confirmText),
                   style: ElevatedButton.styleFrom(
                     foregroundColor: Colors.white,
-                    backgroundColor: isReject ? Colors.red : Colors.green, // Change background color
+                    backgroundColor: isReject ? DangerColor.c5 : SuccessColor.c5,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),

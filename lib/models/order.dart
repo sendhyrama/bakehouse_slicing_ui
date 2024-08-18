@@ -48,27 +48,27 @@ class Order {
         items: [
           OrderItem(
             name: 'Choco Cake',
-            size: 'D18',
+            size: 'Potongan',
             variant: 'Gluten-free',
             quantity: 2,
             pricePerUnit: 35000,
             imageUrl:
                 'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto1.png',
-            unit: 'Slice',
+            unit: 'Pcs',
           ),
           OrderItem(
             name: 'Lemon Tartlet',
-            size: 'D18',
+            size: 'Potongan',
             variant: 'Gluten-free',
             quantity: 1,
             pricePerUnit: 35000,
             imageUrl:
                 'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto2.png',
-            unit: 'Slice',
+            unit: 'Pcs',
           ),
           OrderItem(
             name: 'Vegan Donut',
-            size: 'Small',
+            size: 'Potongan',
             variant: 'Gluten-free',
             quantity: 8,
             pricePerUnit: 8000,
@@ -99,27 +99,27 @@ class Order {
         items: [
           OrderItem(
             name: 'Choco Cake',
-            size: 'D18',
+            size: 'Potongan',
             variant: 'Gluten-free',
             quantity: 4,
             pricePerUnit: 35000,
             imageUrl:
                 'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto2.png',
-            unit: 'Slice',
+            unit: 'Pcs',
           ),
           OrderItem(
             name: 'Lemon Tartlet',
-            size: 'D18',
+            size: 'Potongan',
             variant: 'Gluten-free',
             quantity: 2,
             pricePerUnit: 35000,
             imageUrl:
                 'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto3.png',
-            unit: 'Slice',
+            unit: 'Pcs',
           ),
           OrderItem(
             name: 'Vegan Donut',
-            size: 'Small',
+            size: 'Potongan',
             variant: 'Gluten-free',
             quantity: 3,
             pricePerUnit: 8000,
@@ -149,27 +149,27 @@ class Order {
         items: [
           OrderItem(
             name: 'Choco Cake',
-            size: 'D18',
+            size: 'Potongan',
             variant: 'Gluten-free',
             quantity: 1,
             pricePerUnit: 35000,
             imageUrl:
                 'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto3.png',
-            unit: 'Slice',
+            unit: 'Pcs',
           ),
           OrderItem(
             name: 'Lemon Tartlet',
-            size: 'D18',
+            size: 'Potongan',
             variant: 'Gluten-free',
             quantity: 1,
             pricePerUnit: 35000,
             imageUrl:
                 'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto4.png',
-            unit: 'Slice',
+            unit: 'Pcs',
           ),
           OrderItem(
             name: 'Vegan Donut',
-            size: 'Small',
+            size: 'Potongan',
             variant: 'Gluten-free',
             quantity: 1,
             pricePerUnit: 8000,
@@ -199,27 +199,27 @@ class Order {
         items: [
           OrderItem(
             name: 'Choco Cake',
-            size: 'D18',
+            size: 'Potongan',
             variant: 'Gluten-free',
             quantity: 2,
             pricePerUnit: 35000,
             imageUrl:
                 'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto4.png',
-            unit: 'Slice',
+            unit: 'Pcs',
           ),
           OrderItem(
             name: 'Lemon Tartlet',
-            size: 'D18',
+            size: 'Potongan',
             variant: 'Gluten-free',
             quantity: 2,
             pricePerUnit: 35000,
             imageUrl:
                 'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto5.png',
-            unit: 'Slice',
+            unit: 'Pcs',
           ),
           OrderItem(
             name: 'Vegan Donut',
-            size: 'Small',
+            size: 'Potongan',
             variant: 'Gluten-free',
             quantity: 4,
             pricePerUnit: 8000,
@@ -249,27 +249,27 @@ class Order {
         items: [
           OrderItem(
             name: 'Choco Cake',
-            size: 'D18',
+            size: 'Potongan',
             variant: 'Gluten-free',
             quantity: 4,
             pricePerUnit: 35000,
             imageUrl:
                 'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto5.png',
-            unit: 'Slice',
+            unit: 'Pcs',
           ),
           OrderItem(
             name: 'Lemon Tartlet',
-            size: 'D18',
+            size: 'Potongan',
             variant: 'Gluten-free',
             quantity: 3,
             pricePerUnit: 35000,
             imageUrl:
                 'https://storage.googleapis.com/bucket-sendhyrama/bakehouse/foto1.png',
-            unit: 'Slice',
+            unit: 'Pcs',
           ),
           OrderItem(
             name: 'Vegan Donut',
-            size: 'Small',
+            size: 'Potongan',
             variant: 'Gluten-free',
             quantity: 3,
             pricePerUnit: 8000,

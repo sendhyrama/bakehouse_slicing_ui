@@ -57,7 +57,7 @@ class FilterIndicator extends StatelessWidget {
                   child: Container(
                     padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 16.0),
                     decoration: BoxDecoration(
-                      border: Border.all(color: startDate == null ? Colors.grey : PrimaryColor.c8),
+                      color: Colors.white,
                       borderRadius: BorderRadius.circular(20.0),
                     ),
                     child: Row(
@@ -67,7 +67,7 @@ class FilterIndicator extends StatelessWidget {
                           startDate == null ? 'Pilih' : _dateFormat.format(startDate!),
                           style: TextStyle(color: startDate == null ? Colors.grey : Colors.black),
                         ),
-                        Icon(Icons.calendar_today, color: startDate == null ? Colors.grey : PrimaryColor.c8),
+                        Icon(Icons.calendar_today, color: startDate == null ? Colors.grey : SecondaryColor.c8),
                       ],
                     ),
                   ),
@@ -104,7 +104,7 @@ class FilterIndicator extends StatelessWidget {
                   child: Container(
                     padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 16.0),
                     decoration: BoxDecoration(
-                      border: Border.all(color: endDate == null ? Colors.grey : PrimaryColor.c8),
+                      color: Colors.white,
                       borderRadius: BorderRadius.circular(20.0),
                     ),
                     child: Row(
@@ -112,9 +112,9 @@ class FilterIndicator extends StatelessWidget {
                       children: [
                         Text(
                           endDate == null ? 'Pilih' : _dateFormat.format(endDate!),
-                          style: TextStyle(color: endDate == null ? Colors.grey : PrimaryColor.c8),
+                          style: TextStyle(color: endDate == null ? Colors.grey : Colors.black),
                         ),
-                        Icon(Icons.calendar_today, color: endDate == null ? Colors.grey : PrimaryColor.c8),
+                        Icon(Icons.calendar_today, color: endDate == null ? Colors.grey : SecondaryColor.c8),
                       ],
                     ),
                   ),
@@ -123,7 +123,7 @@ class FilterIndicator extends StatelessWidget {
             ),
           ),
           IconButton(
-            icon: Icon(Icons.clear, color: Colors.red),
+            icon: const Icon(Icons.highlight_remove, color: Colors.red),
             onPressed: onClearFilter,
           ),
         ],
