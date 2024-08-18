@@ -119,6 +119,21 @@ class ReviewPage extends StatelessWidget {
               ),
               child: Text(order.reviewText, style: TextStyles.b1),
             ),
+            const SizedBox(
+              height: 12,
+            ),
+            Center(
+              child: ElevatedButton(
+                onPressed: () => context,
+                style: ElevatedButton.styleFrom(
+                    foregroundColor: Colors.white,
+                    backgroundColor: PrimaryColor.c7,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    )),
+                child: const Text('Balas'),
+              ),
+            ),
             const SizedBox(height: 16.0),
             const Divider(),
             const SizedBox(height: 8.0),

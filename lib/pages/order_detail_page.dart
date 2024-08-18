@@ -177,7 +177,7 @@ class OrderDetailPage extends StatelessWidget {
               },
             ),
             const SizedBox(height: 16.0),
-            const Text("Catatan:", style: TextStyles.b1),
+            Text("Catatan:", style: TextStyles.h4.copyWith(fontWeight: FontWeight.w500)),
             const SizedBox(height: 8.0),
             Container(
               width: double.infinity,
