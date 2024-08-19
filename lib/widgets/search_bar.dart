@@ -7,8 +7,13 @@ class SearchBarr extends StatefulWidget {
   final TextEditingController controller;
   final Function(String) onSearch;
   final VoidCallback onFilterPressed;
+  final bool isFilterActive;
 
-  SearchBarr({required this.controller, required this.onSearch, required this.onFilterPressed});
+  SearchBarr(
+      {required this.controller,
+      required this.onSearch,
+      required this.onFilterPressed,
+      this.isFilterActive = false});
 
   @override
   _SearchBarrState createState() => _SearchBarrState();
@@ -72,7 +77,8 @@ class _SearchBarrState extends State<SearchBarr> {
                   ),
                   if (isFilled)
                     IconButton(
-                      icon: const Icon(Icons.highlight_remove, color: Colors.grey),
+                      icon: const Icon(Icons.highlight_remove,
+                          color: Colors.grey),
                       onPressed: _clearSearch,
                     ),
                 ],
@@ -83,12 +89,12 @@ class _SearchBarrState extends State<SearchBarr> {
           Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(50),
-              color: PrimaryColor.c3,
+              color: widget.isFilterActive ? PrimaryColor.c3 : Colors.white,
             ),
             child: IconButton(
-              icon: const Icon(
+              icon: Icon(
                 Icons.filter_list,
-                color: PrimaryColor.c8,
+                color: widget.isFilterActive ? PrimaryColor.c7 : PrimaryColor.c7,
               ),
               onPressed: widget.onFilterPressed,
             ),

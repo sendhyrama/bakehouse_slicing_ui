@@ -30,6 +30,10 @@ class _OrdersPageState extends State<OrderPage> {
   DateTime? endDate;
   Map<int, DateTime?> startDates = {};
   Map<int, DateTime?> endDates = {};
+  bool isFilterActive() {
+    return startDates[selectedTabIndex] != null &&
+        endDates[selectedTabIndex] != null;
+  }
 
   @override
   void initState() {
@@ -273,6 +277,7 @@ class _OrdersPageState extends State<OrderPage> {
             controller: searchController,
             onSearch: handleSearch,
             onFilterPressed: handleFilterPressed,
+            isFilterActive: isFilterActive(),
           ),
           if (startDates[selectedTabIndex] != null &&
               endDates[selectedTabIndex] != null)
@@ -283,14 +288,26 @@ class _OrdersPageState extends State<OrderPage> {
             ),
           Expanded(
             child: filteredOrders.isEmpty
-                ? EmptyState(
-                    title: 'Hasil pencarian tidak ditemukan',
-                    message: 'Tidak ditemukan hasil untuk pencarian Anda. Coba ganti dengan kata kunci lain.',
-                    icon: SvgPicture.asset(
-                      'assets/icons/not-found.svg',
-                      width: 200,
-                      height: 200,
-                    ))
+                ? searchController.text.isEmpty
+                    ? EmptyState(
+                        title: 'Tidak ada pesanan',
+                        message: 'Tidak ada pesanan yang tersedia saat ini.',
+                        icon: SvgPicture.asset(
+                          'assets/icons/no-orders.svg',
+                          width: 200,
+                          height: 200,
+                        ),
+                      )
+                    : EmptyState(
+                        title: 'Hasil pencarian tidak ditemukan',
+                        message:
+                            'Tidak ditemukan hasil untuk pencarian Anda. Coba ganti dengan kata kunci lain.',
+                        icon: SvgPicture.asset(
+                          'assets/icons/not-found.svg',
+                          width: 200,
+                          height: 200,
+                        ),
+                      )
                 : ListView.builder(
                     padding: EdgeInsets.zero,
                     itemCount: filteredOrders.length,
@@ -301,7 +318,6 @@ class _OrdersPageState extends State<OrderPage> {
                       } else {
                         return OrderCard(
                           order: filteredOrders[index],
-                          // items:context,index, // Pass the appropriate order items
                           onUpdateStatus: () {
                             if (filteredOrders[index].status ==
                                 'Siap Diambil') {
