@@ -290,8 +290,9 @@ class _OrdersPageState extends State<OrderPage> {
             child: filteredOrders.isEmpty
                 ? searchController.text.isEmpty
                     ? EmptyState(
-                        title: 'Tidak ada pesanan',
-                        message: 'Tidak ada pesanan yang tersedia saat ini.',
+                        title: 'Masih belum ada pesanan nih!',
+                        message:
+                            'Pesanan Anda akan ditampilkan setelah Pelanggan melakukan transaksi.',
                         icon: SvgPicture.asset(
                           'assets/icons/no-orders.svg',
                           width: 200,
