@@ -39,12 +39,12 @@ class OrderHistoryTabs extends StatelessWidget {
             text,
             style: TextStyles.b1.copyWith(
               color: isSelected ? PrimaryColor.c8 : Colors.grey,
-              fontWeight: isSelected ? FontWeight.w500 : FontWeight.normal,
+              fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal,
             ),
           ),
           if (isSelected)
             Container(
-              margin: const EdgeInsets.only(top: 8.0),
+              margin: const EdgeInsets.only(top: 4.0),
               height: 2.0,
               width: 100.0,
               color: PrimaryColor.c8,
