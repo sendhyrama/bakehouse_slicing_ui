@@ -12,38 +12,43 @@ class EmptyState extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        return SingleChildScrollView(
-          child: ConstrainedBox(
-            constraints: BoxConstraints(
-              minHeight: constraints.maxHeight,
-            ),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 32.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  icon,
-                  const SizedBox(height: 16.0),
-                  Text(
-                    title,
-                    style: TextStyles.h3.copyWith(fontWeight: FontWeight.w600),
-                    textAlign: TextAlign.center,
+    return SafeArea(
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          return SingleChildScrollView(
+            child: ConstrainedBox(
+              constraints: BoxConstraints(
+                minHeight: constraints.maxHeight,
+              ),
+              child: IntrinsicHeight(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 32.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      icon,
+                      const SizedBox(height: 16.0),
+                      Text(
+                        title,
+                        style:
+                            TextStyles.h3.copyWith(fontWeight: FontWeight.w600),
+                        textAlign: TextAlign.center,
+                      ),
+                      const SizedBox(height: 4.0),
+                      if (message != null)
+                        Text(
+                          message!,
+                          style: TextStyles.b1.copyWith(color: NeutralColor.c5),
+                          textAlign: TextAlign.center,
+                        ),
+                    ],
                   ),
-                  const SizedBox(height: 4.0),
-                  if (message != null)
-                    Text(
-                      message!,
-                      style: TextStyles.b1.copyWith(color: NeutralColor.c5),
-                      textAlign: TextAlign.center,
-                    ),
-                ],
+                ),
               ),
             ),
-          ),
-        );
-      },
+          );
+        },
+      ),
     );
   }
 }
