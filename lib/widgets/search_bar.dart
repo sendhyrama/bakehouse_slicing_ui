@@ -86,15 +86,15 @@ class _SearchBarrState extends State<SearchBarr> {
             ),
           ),
           const SizedBox(width: 16.0),
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(50),
-              color: widget.isFilterActive ? PrimaryColor.c3 : Colors.white,
-            ),
+          Material(
+            elevation: 1,
+            shape: const CircleBorder(),
+            color: widget.isFilterActive ? PrimaryColor.c3 : Colors.white,
             child: IconButton(
               icon: Icon(
                 Icons.filter_list,
-                color: widget.isFilterActive ? PrimaryColor.c7 : PrimaryColor.c7,
+                color:
+                    widget.isFilterActive ? PrimaryColor.c7 : PrimaryColor.c7,
               ),
               onPressed: widget.onFilterPressed,
             ),
