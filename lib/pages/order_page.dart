@@ -279,8 +279,7 @@ class _OrdersPageState extends State<OrderPage> {
             onFilterPressed: handleFilterPressed,
             isFilterActive: isFilterActive(),
           ),
-          if (startDates[selectedTabIndex] != null &&
-              endDates[selectedTabIndex] != null)
+          if (isFilterActive())
             FilterIndicator(
               startDate: startDates[selectedTabIndex],
               endDate: endDates[selectedTabIndex],
@@ -288,27 +287,26 @@ class _OrdersPageState extends State<OrderPage> {
             ),
           Expanded(
             child: filteredOrders.isEmpty
-                ? searchController.text.isEmpty
-                    ? EmptyState(
-                        title: 'Masih belum ada pesanan nih!',
-                        message:
-                            'Pesanan Anda akan ditampilkan setelah Pelanggan melakukan transaksi.',
+                ? Center(
+                    child: SingleChildScrollView(
+                      padding: EdgeInsets.zero,
+                      child: EmptyState(
+                        title: searchController.text.isEmpty
+                            ? 'Masih belum ada pesanan nih!'
+                            : 'Hasil pencarian tidak ditemukan',
+                        message: searchController.text.isEmpty
+                            ? 'Pesanan Anda akan ditampilkan setelah Pelanggan melakukan transaksi.'
+                            : 'Tidak ditemukan hasil untuk pencarian Anda. Coba ganti dengan kata kunci lain.',
                         icon: SvgPicture.asset(
-                          'assets/icons/no-orders.svg',
+                          searchController.text.isEmpty
+                              ? 'assets/icons/no-orders.svg'
+                              : 'assets/icons/not-found.svg',
                           width: 200,
                           height: 200,
                         ),
-                      )
-                    : EmptyState(
-                        title: 'Hasil pencarian tidak ditemukan',
-                        message:
-                            'Tidak ditemukan hasil untuk pencarian Anda. Coba ganti dengan kata kunci lain.',
-                        icon: SvgPicture.asset(
-                          'assets/icons/not-found.svg',
-                          width: 200,
-                          height: 200,
-                        ),
-                      )
+                      ),
+                    ),
+                  )
                 : ListView.builder(
                     padding: EdgeInsets.zero,
                     itemCount: filteredOrders.length,
