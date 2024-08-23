@@ -119,8 +119,9 @@ class _OrderHistoryPageState extends State<OrderHistoryPage> {
             child: filteredOrders.isEmpty
                 ? const Center(
                     child: Text(
-                      'Tidak ada pesanan yang ditemukan',
+                      'Tidak ditemukan hasil untuk pencarian Anda. Coba ganti dengan kata kunci lain atau atur ulang filter.',
                       style: TextStyles.b1,
+                      textAlign: TextAlign.center,
                     ),
                   )
                 : ListView.builder(
@@ -129,7 +130,7 @@ class _OrderHistoryPageState extends State<OrderHistoryPage> {
                       return OrderHistoryCard(order: filteredOrders[index]);
                     },
                   ),
-          ),
+          )
         ],
       ),
     );

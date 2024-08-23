@@ -291,14 +291,16 @@ class _OrdersPageState extends State<OrderPage> {
                     child: SingleChildScrollView(
                       padding: EdgeInsets.zero,
                       child: EmptyState(
-                        title: searchController.text.isEmpty
-                            ? 'Masih belum ada pesanan nih!'
-                            : 'Hasil pencarian tidak ditemukan',
-                        message: searchController.text.isEmpty
+                        title:
+                            searchController.text.isEmpty && !isFilterActive()
+                                ? 'Masih belum ada pesanan nih!'
+                                : 'Hasil pencarian tidak ditemukan',
+                        message: searchController.text.isEmpty &&
+                                !isFilterActive()
                             ? 'Pesanan Anda akan ditampilkan setelah Pelanggan melakukan transaksi.'
-                            : 'Tidak ditemukan hasil untuk pencarian Anda. Coba ganti dengan kata kunci lain.',
+                            : 'Tidak ditemukan hasil untuk pencarian Anda. Coba ganti dengan kata kunci lain atau atur ulang filter.',
                         icon: SvgPicture.asset(
-                          searchController.text.isEmpty
+                          searchController.text.isEmpty && !isFilterActive()
                               ? 'assets/icons/no-orders.svg'
                               : 'assets/icons/not-found.svg',
                           width: 200,
@@ -333,7 +335,7 @@ class _OrdersPageState extends State<OrderPage> {
                       }
                     },
                   ),
-          ),
+          )
         ],
       ),
     );
